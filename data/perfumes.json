@@ -1,0 +1,2343 @@
+[
+ {
+  "id": 101,
+  "nombre": "9PM Night Out",
+  "marca": "Afnan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 108000,
+  "imagen": "img/afnan-9pm-night-out.webp",
+
+  "descripcion": "Dulce, intenso y muy seductor. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Pitahaya, lavanda, coñac, manzana y bergamota",
+  "notas_corazon": "Toffee, cardamomo, gamuza y cedro",
+  "notas_fondo": "Haba tonka, Ambrofix, Akigalawood",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 102,
+  "nombre": "9PM",
+  "marca": "Afnan",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/afnan-9pm-black.webp",
+
+  "descripcion": "Dulce, especiado y muy seductor. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Bergamota, manzana, canela y lavanda",
+  "notas_corazon": "Flor de azahar y lirio de los valles",
+  "notas_fondo": "Vainilla, haba tonka, ámbar y pachulí",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 103,
+  "nombre": "9PM Elixir",
+  "marca": "Afnan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 85000,
+  "imagen": "img/afnan-9pm-elixir.webp",
+
+  "descripcion": "Más profundo y elegante que el 9PM original. Dulce avainillado con toque especiado y ambarado, ideal para citas y salidas nocturnas.",
+
+  "notas_salida": "Cardamomo, nuez moscada y elemí",
+  "notas_corazon": "Pimienta de Jamaica, cuero y lavanda",
+  "notas_fondo": "Vainilla, pachulí, ládano y heliántemo",
+  "stock": true,
+  "activo": true
+
+},
+{
+  "id": 104,
+  "nombre": "9PM Rebel",
+  "marca": "Afnan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 80000,
+  "imagen": "img/afnan-9pm-rebel.webp",
+
+  "descripcion": "Más fresco y moderno que el 9PM clásico. Dulce frutal con fondo amaderado, llamativo pero usable todos los días. Ideal para salidas, citas y también uso diario nocturno.",
+
+  "notas_salida": "Piña, mandarina y manzana verde",
+  "notas_corazon": "Lavanda, geranio y cedro",
+  "notas_fondo": "Vainilla, ámbar, pachulí y madera de sándalo",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 105,
+  "nombre": "9PM Pour Femme",
+  "marca": "Afnan",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/afnan-9pm-purple.webp",
+
+  "descripcion": "Dulce frutal moderno y llamativo. Más liviano y juvenil que el 9PM clásico, ideal para salidas, boliche y uso nocturno sin ser pesado.",
+
+  "notas_salida": "Frutas rojas, bergamota y pera",
+  "notas_corazon": "Jazmín y rosa",
+  "notas_fondo": "Vainilla, ámbar y almizcle",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 106,
+  "nombre": "9AM Dive",
+  "marca": "Afnan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/afnan-9am-dive.webp",
+
+  "descripcion": "Fresco, limpio y acuático. Aroma veraniego muy versátil, ideal para uso diario, oficina o después del gimnasio.",
+
+  "notas_salida": "Limón, menta, grosella negra y pimienta rosa",
+  "notas_corazon": "Manzana, incienso y cedro",
+  "notas_fondo": "Jengibre, sándalo, pachulí y jazmín",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 107,
+  "nombre": "Turathi Electric",
+  "marca": "Afnan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/afnan-turathi-electric.webp",
+
+  "descripcion": "Un cítrico aromático moderno, brillante y energético, fresco y elegante para uso diario y climas cálidos.",
+
+  "notas_salida": "Pera, mandarina, pomelo rosado y bergamota",
+  "notas_corazon": "Flor de azahar del naranjo, manzana y cedro",
+  "notas_fondo": "Almizcle, ámbar y vainilla.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 108,
+  "nombre": "Al Watahiah Bareeq Al Dhahab",
+  "marca": "Al Watahiah",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 45000,
+  "imagen": "img/al-watahiah-bareeq-al-dhahab.webp",
+
+  "descripcion":"Dulce cálido y elegante, con vainilla ambarada envolvente. Aroma intenso y llamativo, ideal para noche, eventos y clima fresco o frío.",
+
+  "notas_salida":"Rosa, asafran y pimienta",
+  "notas_corazon":"Madera de oud, caramelo, pachuli y notas florales",
+  "notas_fondo":"Incienso, ámbar, almizcle y notas amaderadas",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 110,
+  "nombre": "Al Haramain Amber Oud Aqua Dubai",
+  "marca": "Al Haramain",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 110000,
+  "imagen": "img/al-haramain-amber-oud-aqua-dubai.webp",
+
+  "descripcion":"Fresco cítrico y elegante, muy limpio y veraniego. Da sensación de perfume importado premium, ideal para días calurosos, uso diario u oficina.",
+
+  "notas_salida": "Bergamota, mandarina y notas verdes",
+  "notas_corazon": "Melón, piña y notas acuáticas",
+  "notas_fondo": "Almizcle blanco, galbano, vainilla y maderas suaves",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 111,
+  "nombre": "Al Haramain Amber Oud Dubai Night",
+  "marca": "Al Haramain",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 100000,
+  "imagen": "img/al-haramain-amber-oud-dubai-night.webp",
+
+  "descripcion":"Intenso, cálido y elegante. Dulce ambarado con fondo amaderado profundo, ideal para noche, salidas y ocasiones especiales en clima fresco o frío.",
+
+  "notas_salida": "Bergamota y especias cálidas",
+  "notas_corazon": "Rosa, lirio y notas amaderadas",
+  "notas_fondo": "Ámbar, haba tonka, almizcle y musgo de roble",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 112,
+  "nombre": "Al Haramain Amber Oud Gold Edition",
+  "marca": "Al Haramain",
+  "genero": "unisex",
+  "ml": 120,
+  "tipo": "EDP",
+  "precio": 105000,
+  "imagen": "img/al-haramain-amber-oud-gold-edition.webp",
+
+  "descripcion":"Dulce frutal intenso y muy llamativo. Aroma tropical tipo ananá-vainilla, elegante y envolvente. Ideal para salidas, eventos y noches frescas.",
+
+  "notas_salida": "Bergamota y notas verdes",
+  "notas_corazon": "Melón, piña y notas dulces frutales",
+  "notas_fondo": "Vainilla, ámbar y almizcle",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 113,
+  "nombre": "Al Haramain Amber Oud Black Edition",
+  "marca": "Al Haramain",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 110000,
+  "imagen": "img/al-haramain-amber-oud-black-edition.webp",
+
+  "descripcion":"Oscuro, elegante y sofisticado. Amaderado ahumado con fondo cálido, ideal para noche, eventos formales y clima frío.",
+
+  "notas_salida": "Cardamomo, lavanda y especias",
+  "notas_corazon": "Cuero, ambar y haba tonka",
+  "notas_fondo": "Benjuí, vetiver y ambar gris",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 200,
+  "nombre": "Club de Nuit Milestone",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 78000,
+  "imagen": "img/armaf-club-de-nuit-milestone.webp",
+
+  "descripcion":"Fresco marino elegante y limpio. Sensación salada-acuática muy veraniega, sofisticada pero fácil de usar todos los días.",
+
+  "notas_salida": "Frutas rojas, bergamota y notas marinas",
+  "notas_corazon": "Violeta, maderas blancas y sándalo",
+  "notas_fondo": "Almizcle, ámbar y vetiver",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 201,
+  "nombre": "Club de Nuit Intense Man",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 72000,
+  "imagen": "img/armaf-club-de-nuit-intense-man.webp",
+
+  "descripcion":"Fresco cítrico con fondo ahumado elegante. Potente, masculino y muy llamativo, ideal para salidas, eventos y también uso diario con presencia.",
+
+  "notas_salida": "Limón, piña, bergamota, grosella negra y manzana",
+  "notas_corazon": "Abedul (toque ahumado), jazmín y rosa",
+  "notas_fondo": "Almizcle, ámbar gris, pachulí y vainilla",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 202,
+  "nombre": "Club de Nuit Urban Elixir",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/armaf-club-de-nuit-urban-elixir.webp",
+
+  "descripcion":"Fresco especiado con fondo cálido ambarado. Moderno, elegante y muy versátil, funciona tanto de día como de noche con excelente presencia.",
+
+  "notas_salida": "Bergamota, pimienta rosa y notas cítricas",
+  "notas_corazon": "Lavanda, geranio, vetiver y elemi",
+  "notas_fondo": "Ámbar, pachulí, cedro y ládano",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 203,
+  "nombre": "Club de Nuit Untold",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 85000,
+  "imagen": "img/armaf-club-de-nuit-untold.webp",
+
+  "descripcion":"Dulce ambarado intenso y muy elegante. Aroma envolvente que deja rastro y genera cumplidos, ideal para noche, eventos y clima fresco o frío.",
+
+  "notas_salida": "Azafrán y jazmín",
+  "notas_corazon": "Ámbar gris y madera de ámbar",
+  "notas_fondo": "Resinas y cedro",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 204,
+  "nombre": "Club de Nuit Precieux",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 100000,
+  "imagen": "img/armaf-club-de-nuit-precieux.webp",
+
+  "descripcion":"Fresco elegante con fondo amaderado suave y refinado. Más sofisticado y equilibrado, ideal para uso diario premium, oficina o salidas formales.",
+
+  "notas_salida":"Limón, bergamota y notas frutales",
+  "notas_corazon":"Jazmín, madera blanca, musgo de roble y anís",
+  "notas_fondo":"Almizcle, cuero, ámbar y vainilla",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 205,
+  "nombre": "Club de Nuit Woman EDP",
+  "marca": "Armaf",
+  "genero": "mujer",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/armaf-club-de-nuit-woman-extrait.webp",
+
+  "descripcion":"Femenino, elegante y muy llamativo. Frutal floral con fondo cálido y sofisticado, ideal para noche, eventos o cuando querés destacar.",
+
+  "notas_salida": "Bergamota, pomelo, durazno y naranja",
+  "notas_corazon": "Rosa, jazmín y lichi",
+  "notas_fondo": "Vainilla, almizcle, pachulí y vetiver",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 206,
+  "nombre": "Club de Nuit Sillage",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 74000,
+  "imagen": "img/armaf-club-de-nuit-sillage.webp",
+
+  "descripcion":"Fresco cítrico con toque metálico y almizclado. Elegante, limpio y muy distintivo, ideal para día, oficina y clima templado o cálido.",
+
+  "notas_salida": "Bergamota, limón, lima, jengibre y grosella negra",
+  "notas_corazon": "Iris, jazmín y rosa",
+  "notas_fondo": "Almizcle, ambroxan, sándalo y cedro",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 217,
+  "nombre": "Club de Nuit Maleka",
+  "marca": "Armaf",
+  "genero": "mujer",
+  "ml": 105,
+  "tipo": "EDP",
+  "precio": 81000,
+  "imagen": "img/armaf-club-de-nuit-maleka.webp",
+
+  "descripcion":"Dulce, frutal y elegante. Ideal para salidas, ocasiones especiales y quienes buscan un aroma femenino y llamativo.",
+
+  "notas_salida": "Lichi, bergamota y pimienta rosa.",
+  "notas_corazon": "Raíz de lirio.",
+  "notas_fondo": "Praliné, sándalo y ambroxan.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 207,
+  "nombre": "Odyssey Go Mango",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 100000,
+  "imagen": "img/armaf-odyssey-go-mango.webp",
+
+  "descripcion": "Dulce tropical y muy veraniego. Mango protagonista con fondo cálido, ideal para días cálidos, salidas informales y uso casual.",
+
+  "notas_salida": "Mango y frutas tropicales",
+  "notas_corazon": "Notas florales suaves y especias ligeras",
+  "notas_fondo": "Vainilla, ámbar y almizcle",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 208,
+  "nombre": "Odyssey Homme",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 56000,
+  "imagen": "img/armaf-odyssey-homme.webp",
+  
+  "descripcion": "Dulce especiado intenso y moderno. Cálido y envolvente, ideal para noche, salidas y clima fresco o frío.",
+
+  "notas_salida": "Vainilla y ámbar",
+  "notas_corazon": "Especias cálidas y notas aromáticas",
+  "notas_fondo": "Cuero, pachulí y almizcle",
+  "stock": true,
+  "activo": true
+
+},
+{
+  "id": 209,
+  "nombre": "Odyssey Limoni",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 58000,
+  "imagen": "img/armaf-odyssey-limoni.webp",
+
+  "descripcion": "Cítrico fresco y luminoso, con vibra mediterránea. Ideal para verano, uso diario y después del gimnasio.",
+
+  "notas_salida": "Limón, bergamota y naranja",
+  "notas_corazon": "Notas aromáticas y jengibre",
+  "notas_fondo": "Almizcle, maderas suaves y ámbar ligero",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 210,
+  "nombre": "Odyssey Candee",
+  "marca": "Armaf",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/armaf-odyssey-candee.webp",
+
+  "descripcion": "Dulce gourmand cremoso y envolvente. Aroma tipo caramelo avainillado con fondo cálido, ideal para salidas, citas y clima fresco.",
+
+  "notas_salida": "Frutas dulces y notas azucaradas",
+  "notas_corazon": "Caramelo y flores suaves",
+  "notas_fondo": "Vainilla, ámbar y almizcle",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 211,
+  "nombre": "Odyssey Aqua",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 85000,
+  "imagen": "img/armaf-odyssey-aqua.webp",
+
+  "descripcion": "Fresco acuático limpio y energizante. Ideal para verano, uso diario, oficina o después del gimnasio.",
+
+  "notas_salida": "Bergamota, pomelo y notas marinas",
+  "notas_corazon": "Lavanda y notas aromáticas",
+  "notas_fondo": "Ámbar, almizcle y maderas suaves",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 212,
+  "nombre": "Odyssey Homme White",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 58000,
+  "imagen": "img/armaf-odyssey-homme-white.webp",
+
+  "descripcion": "Fresco especiado elegante y moderno. Más liviano y versátil que Odyssey Homme, ideal para uso diario, oficina y clima templado o cálido.",
+
+  "notas_salida": "Bergamota y pimienta rosa",
+  "notas_corazon": "Lavanda, salvia y geranio",
+  "notas_fondo": "Ámbar, cedro y pachulí",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 213,
+  "nombre": "Odyssey Mandarin Sky",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/armaf-odyssey-mandarin-sky.webp",
+
+  "descripcion": "Dulce especiado con apertura cítrica vibrante. Cálido, moderno y seductor, ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Mandarina, naranja y azafrán",
+  "notas_corazon": "Caramelo y notas aromáticas",
+  "notas_fondo": "Vainilla, ámbar y ambroxan",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 214,
+  "nombre": "Odyssey Mandarin Elixir",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 70000,
+  "imagen": "img/armaf-odyssey-mandarin-elixir.webp",
+
+  "descripcion": "Cítrico dulce elegante y envolvente. Mandarina vibrante con fondo cálido ambarado, ideal para noche y clima templado o fresco.",
+
+  "notas_salida": "Mandarina, naranja y bergamota",
+  "notas_corazon": "Notas especiadas y aromáticas",
+  "notas_fondo": "Vainilla, ámbar, ambroxan y maderas suaves",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 215,
+  "nombre": "Odyssey Mega Men",
+  "marca": "Armaf",
+  "genero": "hombre",
+  "ml": 200,
+  "tipo": "EDP",
+  "precio": 85000,
+  "imagen": "img/armaf-odyssey-mega-men.webp",
+
+  "descripcion": "Fresco moderno con fondo ligeramente dulce y ambarado. Versátil y elegante, ideal para uso diario, oficina y salidas casuales.",
+
+  "notas_salida": "Bergamota, naranja y notas verdes",
+  "notas_corazon": "Lavanda y especias suaves",
+  "notas_fondo": "Ámbar, almizcle y maderas suaves",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 216,
+  "nombre": "Odyssey Spectra",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 55000,
+  "imagen": "img/armaf-odyssey-spectra.webp",
+
+  "descripcion": "Dulce, moderno y muy llamativo. Ideal para salidas, noche y quienes buscan un aroma intenso y juvenil.",
+
+  "notas_salida": "Canela, manzana y bergamota.",
+  "notas_corazon": "Canela, lavanda, flor de azahar del naranjo y lirio de los valles",
+  "notas_fondo": "Vainilla, tabaco, haba tonka, ámbar y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 300,
+  "nombre": "Bharara King EDP",
+  "marca": "Bharara",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 88000,
+  "imagen": "img/bharara-king-edp.webp",
+
+  "descripcion": "Dulce amaderado intenso y elegante. Aroma envolvente con personalidad fuerte, ideal para noche, salidas y eventos especiales.",
+
+  "notas_salida": "Frutas oscuras y especias",
+  "notas_corazon": "Rosa y notas florales cálidas",
+  "notas_fondo": "Vainilla, ámbar, almizcle y maderas profundas",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 301,
+  "nombre": "Bharara King Parfum",
+  "marca": "Bharara",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "Parfum",
+  "precio": 135000,
+  "imagen": "img/bharara-king-parfum.webp",
+
+  "descripcion": "Dulce amaderado profundo y sofisticado. Aroma elegante y potente, ideal para noche, eventos especiales y ocasiones donde querés destacar con presencia.",
+
+  "notas_salida": "Cítricos oscuros y especias",
+  "notas_corazon": "Rosa, jazmín y notas florales cálidas",
+  "notas_fondo": "Vainilla, ámbar, almizcle y maderas profundas",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 302,
+  "nombre": "Bharara Niche Parfum",
+  "marca": "Bharara",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "Parfum",
+  "precio": 100000,
+  "imagen": "img/bharara-niche.webp",
+
+  "descripcion": "Un aromático amaderado elegante, que abre fresco y luminoso, evoluciona hacia un corazón especiado refinado y termina en un fondo cálido de maderas y ámbar, sofisticado y versátil para uso diario o nocturno.",
+
+  "notas_salida": "Cítricos y enebro",
+  "notas_corazon": "Jazmín, chocolate y abeto balsámico",
+  "notas_fondo": "Amberwood y musgo",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 400,
+  "nombre": "Amber Empire",
+  "marca": "French Avenue",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 105000,
+  "imagen": "img/french-avenue-amber-empire.webp",
+
+  "descripcion": "Ambarado cálido y elegante con presencia intensa. Aroma envolvente y sofisticado, ideal para noche, eventos y ocasiones especiales.",
+
+  "notas_salida": "Cítricos dulces y especias ligeras",
+  "notas_corazon": "Flores cálidas y notas ambaradas",
+  "notas_fondo": "Ámbar, vainilla y maderas suaves",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 401,
+  "nombre": "Atlantis",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 110000,
+  "imagen": "img/french-avenue-atlantis.webp",
+
+  "descripcion": "Fresco acuático limpio con un toque moderno y elegante. Ideal para uso diario, oficina y días cálidos con presencia equilibrada.",
+  
+  "notas_salida": "Cítricos frescos y notas marinas",
+  "notas_corazon": "Lavanda y notas verdes ligeras",
+  "notas_fondo": "Almizcle, ámbar blanco y maderas suaves",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 402,
+  "nombre": "Aether",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 105000,
+  "imagen": "img/french-avenue-aether.webp",
+
+  "descripcion": "Perfil sofisticado y versátil con un equilibrio entre frescura y calidez. Ideal para día o noche, uso diario y ocasiones especiales.",
+
+  "notas_salida": "Cítricos frescos y bergamota",
+  "notas_corazon": "Flores blancas y notas aromáticas",
+  "notas_fondo": "Ambar, almizcle y maderas suaves",
+  "stock": true,
+  "activo": true
+},
+{
+ "id": 411,
+  "nombre": "Chaos",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 60000,
+  "imagen": "img/french-avenue-chaos.webp",
+
+  "descripcion": "Dulce, intenso y muy seductor. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Cereza y Frutas rojas",
+  "notas_corazon": "Iris",
+  "notas_fondo": "Cuero, vainilla y musgo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 403,
+  "nombre": "Royal Blend Nero",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 83000,
+  "imagen": "img/french-avenue-royal-blend-nero.webp",
+
+  "descripcion": "Oscuro, elegante y potente, con un perfil amaderado‐ambarado profundo. Ideal para noche, salidas formales y ocasiones donde querés destacar con presencia.",
+
+  "notas_salida": "Especias cálidas y cítricos oscuros",
+  "notas_corazon": "Notas aromáticas intensas y flores oscuras",
+  "notas_fondo": "Ambar, maderas profundas, almizcle y resinas",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 404,
+  "nombre": "Royal Blend",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 77000,
+  "imagen": "img/french-avenue-royal-blend.webp",
+
+  "descripcion": "Elegante y refinado, con un equilibrio entre frescura y calidez. Ideal para uso diario, oficina y salidas con presencia sin ser abrumador.",
+
+  "notas_salida": "Cítricos frescos y bergamota",
+  "notas_corazon": "Notas aromáticas florales y especiadas",
+  "notas_fondo": "Ambar, almizcle y maderas suaves",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 405,
+  "nombre": "Vulcan Feu",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 83000,
+  "imagen": "img/french-avenue-vulcan-feu.webp",
+
+  "descripcion": "Dulce cálido y sofisticado con toque amaderado profundo. Envolvente y elegante, ideal para noche y clima fresco.",
+
+  "notas_salida": "Canela y especias dulces",
+  "notas_corazon": "Caramelo y maderas suaves",
+  "notas_fondo": "Vainilla, ámbar y pachulí",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 406,
+  "nombre": "Vulcan Black Friday",
+  "marca": "French Avenue",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 100000,
+  "imagen": "img/french-avenue-vulcan-black-friday.webp",
+
+  "descripcion": "Fragancia intensa y elegante con carácter oscuro y cálido. Mezcla de cuero especiado con floración de rosa y base terrosa profunda, ideal para noche y clima frío.",
+  
+  "notas_salida": "Azafrán, manzana y canela",
+  "notas_corazon": "Cuero y rosa",
+  "notas_fondo": "Pachulí, musgo, almizcle y papiro de Egipto",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 407,
+  "nombre": "Veneno Scarlet",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 115000,
+  "imagen": "img/french-avenue-veneno-scarlet.webp",
+
+  "descripcion": "Fragancia unisex gourmand-amaderada que combina frutas rojas dulces con especias cálidas y fondo profundo de cuero y vainilla. Ideal para noche, salidas y ocasiones especiales.",
+
+  "notas_salida": "Fresa, zarzamora y caramelo",
+  "notas_corazon": "Frambuesa, cedro y canela",
+  "notas_fondo": "Cuero, caramelo, vainilla, pachulí, haba tonka y abeto",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 408,
+  "nombre": "Sweet Paradise",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/french-avenue-sweet-paradise.webp",
+
+  "descripcion": "Dulce floral gourmand, envolvente y femenino. Combina frutas jugosas con un corazón floral elegante y un fondo cremoso avainillado, ideal para salidas, citas y clima templado o fresco.",
+
+  "notas_salida": "Frutas rojas y acordes dulces",
+  "notas_corazon": "Flores blancas y notas florales suaves",
+  "notas_fondo": "Vainilla, almizcle y maderas suaves",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 409,
+  "nombre": "Liquid Brun",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 78000,
+  "imagen": "img/french-avenue-liquid-brun.webp",
+
+  "descripcion":"Dulce, cálido y envolvente. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida":"Canela, flor de azahar del naranjo, cardamomo y bergamota",
+  "notas_corazon":"Vainilla Bourbon y elemí",
+  "notas_fondo":"Praliné, ambroxan, madera de gaiac y almizcle",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 412,
+  "nombre": "Liquid Brun Limited Edition",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 150,
+  "tipo": "EDP",
+  "precio": 110000,
+  "imagen": "img/french-avenue-liquid-brun-limited-edition.webp",
+
+  "descripcion":"Dulce, intenso y muy elegante. Ideal para noche, ocasiones especiales y clima fresco.",
+
+  "notas_salida":"Cardamomo, lavanda y cítricos",
+  "notas_corazon":"Flor de azahar, madera de gaiac y rosa",
+  "notas_fondo":"Vainilla, ámbar, haba tonka y musgo de roble.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 410,
+  "nombre": "Spectre Ghost",
+  "marca": "French Avenue",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/french-avenue-spectre-ghost.webp",
+
+  "descripcion": "Un gourmand especiado y seductor con vainilla cremosa y fondo amaderado cálido, ideal para destacar en noches frescas.",
+
+  "notas_salida": "Canela, flor de azahar del naranjo, cardamomo y bergamota.",
+  "notas_corazon": "Vainilla Bourbon y elemi.",
+  "notas_fondo": "Praliné, ambroxan, madera de gaiac y almizcle.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 500,
+  "nombre": "Asad Bourbon",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/lattafa-asad-bourbon.webp",
+
+  "descripcion": "Un oriental especiado con toque dulce y cálido, combina cacao y vainilla Bourbon con pimienta rosa fresca para una presencia atractiva en noches o eventos.",
+
+  "notas_salida": "Lavanda, ciruela Mirabel y pimienta rosa.",
+  "notas_corazon": "Cacao, davana y nuez moscada.",
+  "notas_fondo": "Vainilla Bourbon, ámbar y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 501,
+  "nombre": "Asad",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 51000,
+  "imagen": "img/lattafa-asad.webp",
+
+  "descripcion": "Un oriental especiado intenso y moderno con vainilla cálida y fondo ambarado, ideal para noches y clima fresco.",
+
+  "notas_salida": "Pimienta negra, piña y tabaco.",
+  "notas_corazon": "Café, pachulí e iris.",
+  "notas_fondo": "Vainilla, ámbar, maderas secas, benjuí y ládano.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 502,
+  "nombre": "Asad Elixir",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/lattafa-asad-elixir.webp",
+
+  "descripcion": "Un oriental amaderado especiado con tabaco y vainilla cálida sobre base resinosa profunda, ideal para noches con presencia.",
+
+  "notas_salida": "Pimienta rosa, azafrán y toronja (pomelo).",
+  "notas_corazon": "Tabaco, cedro y vainilla.",
+  "notas_fondo": "Incienso, ámbar ligero, pachulí y cachemira.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 503,
+  "nombre": "Asad Zanzibar",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 49000,
+  "imagen": "img/lattafa-asad-zanzibar.webp",
+
+  "descripcion": "Un oriental fresco con lavanda y agua de coco salada sobre un fondo cálido de vainilla e incienso, ideal para uso diario y eventos casuales.",
+
+  "notas_salida": "Lavanda y pimienta negra.",
+  "notas_corazon": "Agua de coco, iris y sal.",
+  "notas_fondo": "Vainilla e incienso.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 504,
+  "nombre": "Asad Zanzibar Limited Edition",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/lattafa-asad-limited.webp",
+
+  "descripcion": "Un oriental especiado moderno con notas marinas y especias cálidas, fresco y elegante para días cálidos o casuales.",
+
+  "notas_salida": "Notas marinas, lavanda y pimienta rosa.",
+  "notas_corazon": "Acordes jabonosos, cachemira y canela.",
+  "notas_fondo": "Ámbar, sándalo, haba tonka y cedro.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 505,
+  "nombre": "Badee Al Oud Amethyst",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-badee-amethyst.webp",
+
+  "descripcion": "Un oriental floral ambarado con rosas y oud profundo, ideal para quien busca un aroma elegante y con carácter.",
+
+  "notas_salida": "Pimienta rosa y bergamota.",
+  "notas_corazon": "Rosa turca, rosa de Bulgaria y jazmín.",
+  "notas_fondo": "Madera de oud, ámbar y vainilla.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 506,
+  "nombre": "Badee Al Oud For Glory",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-badee-for-glory.webp",
+
+  "descripcion": "Un amaderado especiado potente centrado en oud y pachulí, con toque cálido de azafrán y lavanda, ideal para destacar en ocasiones especiales.",
+
+  "notas_salida": "Azafrán, nuez moscada y lavanda.",
+  "notas_corazon": "Madera de oud y pachulí.",
+  "notas_fondo": "Madera de oud, pachulí y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 507,
+  "nombre": "Badee Al Oud Sublime",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-badee-sublime.webp",
+
+  "descripcion": "Un amaderado aromático afrutado con manzana y lichi fresco, corazón de ciruela y jazmín sobre una base dulce y terrosa, versátil para día y noche.",
+
+  "notas_salida": "Manzana, lichi y rosa.",
+  "notas_corazon": "Ciruela y jazmín.",
+  "notas_fondo": "Vainilla, musgo y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 508,
+  "nombre": "Badee Al Oud Honor and Glory",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-badee-honor-glory.webp",
+
+  "descripcion": "Un oriental gourmad especiado con piña caramelizada y canela, ideal para quienes buscan una fragancia cálida y envolvente con carácter.",
+
+  "notas_salida": "Piña y crème brûlée.",
+  "notas_corazon": "Canela, cúrcuma, pimienta negra y benjuí.",
+  "notas_fondo": "Vainilla, cachemira, sándalo y musgo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 509,
+  "nombre": "Badee Al Oud Noble Blush",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/lattafa-badee-noble-blush.webp",
+
+  "descripcion": "Una floral frutal gourmand dulce y romántica con leche de rosas y almendra cremosa, perfecta para momentos cálidos y femeninos.",
+
+  "notas_salida": "Leche de rosas.",
+  "notas_corazon": "Merengue y almendra.",
+  "notas_fondo": "Vainilla, sándalo y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 551,
+  "nombre": "Confidential Private Gold",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 43000,
+  "imagen": "img/lattafa-confidential-gold.webp",
+
+  "descripcion": "Frutal, dulce y tropical. Ideal para salidas, clima cálido y quienes buscan un aroma llamativo y juvenil.",
+
+  "notas_salida": "Durazno, maracuyá, pera, frambuesa y casis.",
+  "notas_corazon": "Lirio de los valles.",
+  "notas_fondo": "Almizcle, vainilla, sándalo, pachulí y heliotropo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 552,
+  "nombre": "Confidential Private Platinum",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 43000,
+  "imagen": "img/lattafa-confidential-platinum.webp",
+
+  "descripcion": "Fresco, aromático y elegante. Ideal para uso diario, oficina o clima cálido..",
+
+  "notas_salida": "Cítricos, bergamota, ciprés y pimienta negra.",
+  "notas_corazon": "Marinas, notas amaderadas y incienso de olíbano.",
+  "notas_fondo": "Ambar gris, almizcle, ládano y musgo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 510,
+  "nombre": "Eclaire Woman",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/lattafa-eclaire-woman.webp",
+
+  "descripcion": "Un floral frutal gourmand dulce y cremoso con caramelo y miel, perfecto para uso diario y ocasiones cálidas.",
+
+  "notas_salida": "Caramelo, leche y azúcar.",
+  "notas_corazon": "Miel y flores blancas.",
+  "notas_fondo": "Vainilla, praliné y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 511,
+  "nombre": "Emaan",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-emaan.webp",
+
+  "descripcion": "Un floral chipre elegante con flores blancas y fondo cálido de vainilla y cedro, ideal para uso diario y ocasiones sofisticadas.",
+
+  "notas_salida": "Bergamota, flor de azahar del naranjo y grosella negra.",
+  "notas_corazon": "Tuberosa, jazmín y caléndula.",
+  "notas_fondo": "Vainilla, almizcle blanco, pachulí y cedro.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 517,
+  "nombre": "Haya",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-haya.webp",
+
+  "descripcion": "Un floral frutal chispeante con notas de champaña y fresa, corazón floral elegante y base cálida ambarada, perfecto para uso diario y ocasiones especiales.",
+
+  "notas_salida": "Champaña, fresa, naranja tangerina, naranja sanguina y rosa.",
+  "notas_corazon": "Gardenia, jazmín y orquídea de vainilla.",
+  "notas_fondo": "Ámbar, sándalo y castaña.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 536,
+  "nombre": "Sakeena",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-sakeena.webp",
+
+  "descripcion": "Un floral frutal dulce y elegante con notas cremosas y suaves, ideal para uso diario y ocasiones románticas.",
+
+  "notas_salida": "Frutas rojas y cítricos.",
+  "notas_corazon": "Rosa y jazmín.",
+  "notas_fondo": "Vainilla, almizcle y maderas claras.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 554,
+  "nombre": "Emeer",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/lattafa-emeer.webp",
+
+  "descripcion": "Fresco, amaderado y elegante. Ideal para uso diario, ocasiones especiales y clima templado.",
+
+  "notas_salida": "Limón, bergamota, esclarea y bayas de enebro",
+  "notas_corazon": "Té blanco, sándalo, cardamomo y incienso de olíbano.",
+  "notas_fondo": "Ambar gris, cedro, cachemira y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 513,
+  "nombre": "Fakhar Gold",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 52000,
+  "imagen": "img/lattafa-fakhar-gold.webp",
+
+  "descripcion": "Un aromático especiado con lavanda fresca y madera cálida, ideal para uso diario con presencia elegante.",
+
+  "notas_salida": "Lavanda, limón y pimienta.",
+  "notas_corazon": "Cardamomo, rosa y canela.",
+  "notas_fondo": "Ámbar, vetiver y maderas.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 514,
+  "nombre": "Fakhar Black",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 51000,
+  "imagen": "img/lattafa-fakhar-black.webp",
+
+  "descripcion": "Un oriental ámbar fresco y moderno con frutas y especias, ideal para uso diario y eventos casuales.",
+
+  "notas_salida": "Manzana, bergamota y jengibre.",
+  "notas_corazon": "Lavanda, salvia, bayas de enebro y geranio.",
+  "notas_fondo": "Haba tonka, amberwood, cedro y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 515,
+  "nombre": "Fakhar Platinum",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 52000,
+  "imagen": "img/lattafa-fakhar-platinum.webp",
+
+  "descripcion": "Un fougère aromático fresco y sofisticado con frutas exóticas y fondo amaderado, versátil para día y noche.",
+
+  "notas_salida": "Bergamota, pimienta rosa y cardamomo.",
+  "notas_corazon": "Guava, jengibre y lavanda.",
+  "notas_fondo": "Palo santo, incienso y sándalo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 516,
+  "nombre": "Fakhar Rose",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/lattafa-fakhar-rose.webp",
+
+  "descripcion": "Un floral dulce con rosa prominente y fondo cálido de vainilla y almizcle, ideal para uso diario y ocasiones románticas.",
+
+  "notas_salida": "Rosa y frutas rojas.",
+  "notas_corazon": "Rosa damascena y peonía.",
+  "notas_fondo": "Vainilla, almizcle blanco y cedro.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 553,
+  "nombre": "Hayaati",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 48000,
+  "imagen": "img/lattafa-hayaati.webp",
+
+  "descripcion": "Fresco, especiado y ligeramente dulce. Ideal para uso diario, salidas y clima templado.",
+
+  "notas_salida": "Manzana y bergamota.",
+  "notas_corazon": "Canela y notas amaderadas.",
+  "notas_fondo": "Almizcle y vainilla.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 518,
+  "nombre": "Hayaati Gold Elixir",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 47000,
+  "imagen": "img/lattafa-hayaati-gold-elixir.webp",
+
+  "descripcion": "Un oriental cálido con cuero especiado, frutas cítricas y fondo ambarado dulce, versátil para día o noche en clima fresco.",
+
+  "notas_salida": "Bergamota, toronja (pomelo) y casis (grosellero negro).",
+  "notas_corazon": "Cuero, durazno y azafrán.",
+  "notas_fondo": "Vainilla, ámbar, almizcle y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 519,
+  "nombre": "Hayaati Al Maleky",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 47000,
+  "imagen": "img/lattafa-hayati-al-maleky.webp",
+
+  "descripcion": "Un oriental especiado ambarado con pimienta rosa y jengibre, equilibrado por cedro e incienso y base cálida de ámbar y almizcle, versátil para día o noche.",
+
+  "notas_salida": "Pimienta rosa, nuez moscada, bergamota y jengibre.",
+  "notas_corazon": "Cedro, notas amaderadas, incienso y ládano.",
+  "notas_fondo": "Almizcle, ámbar y ámbar gris.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 520,
+  "nombre": "His Confession",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 62000,
+  "imagen": "img/lattafa-his-confession.webp",
+
+  "descripcion": "Un oriental amaderado especiado con mandarina, lavanda y canela fresca, ideal para hombres que buscan una fragancia elegante y con presencia.",
+
+  "notas_salida": "Mandarina, canela y lavanda.",
+  "notas_corazon": "Iris, ciprés, benzoin y mahonial.",
+  "notas_fondo": "Vainilla, haba tonka, ámbar, incienso, cedro y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 521,
+  "nombre": "Her Confession",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/lattafa-her-confession.webp",
+
+  "descripcion": "Un floral frutal gourmand con frutas jugosas y notas dulces cremosas, ideal para mujeres que buscan una fragancia femenina y moderna.",
+
+  "notas_salida": "Frutas rojas y cítricos.",
+  "notas_corazon": "Flores blancas y jazmín.",
+  "notas_fondo": "Vainilla, almizcle y praliné.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 522,
+  "nombre": "Khamrah",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/lattafa-khamrah.webp",
+
+  "descripcion": "Una oriental especiada rica y dulce con dátiles y praliné sobre fondo cálido de vainilla y resinas, ideal para ocasiones especiales o clima fresco.",
+
+  "notas_salida": "Canela, nuez moscada y bergamota.",
+  "notas_corazon": "Dátiles, praliné, tuberosa y mahonial.",
+  "notas_fondo": "Vainilla, haba tonka, amberwood, mirra, benjuí y akigalawood.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 523,
+  "nombre": "Khamrah Qahwa",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/lattafa-khamrah-qahwa.webp",
+
+  "descripcion": "Una oriental gourmand con café tostado y especias dulces, ideal para quienes buscan un aroma profundo y envolvente.",
+
+  "notas_salida": "Café, canela y cardamomo.",
+  "notas_corazon": "Dátiles y praliné.",
+  "notas_fondo": "Vainilla, ámbar y maderas cálidas.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 524,
+  "nombre": "Khamrah Dukhan",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/lattafa-khamrah-dukhan.webp",
+
+  "descripcion": "Oriental profundo y ahumado con café y especias intensas, ideal para climas fríos o salidas nocturnas con presencia marcada.",
+
+  "notas_salida": "Café tostado, cardamomo y pimienta.",
+  "notas_corazon": "Especias ahumadas y dátiles.",
+  "notas_fondo": "Madera de oud, ámbar, vainilla y humo de madera.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 525,
+  "nombre": "Lail Maleki",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 44000,
+  "imagen": "img/lattafa-lail-maleki.webp",
+
+  "descripcion": "Un oriental ámbar especiado con frutas y flores sobre base cálida de ámbar y caramelo, ideal para ocasiones especiales o uso diario con presencia dulce y elegante.",
+
+  "notas_salida": "Notas afrutadas, especiadas y cítricos.",
+  "notas_corazon": "Miel, jazmín, gardenia y orquídea.",
+  "notas_fondo": "Almizcle, ámbar, caramelo y sándalo.",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 526,
+  "nombre": "Maahir Black Edition",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-maahir-black.webp",
+
+  "descripcion": "Un oriental ámbar especiado profundo con cuero y maderas oscuras, ideal para destacar con presencia y carácter en noches frías.",
+
+  "notas_salida": "Pimienta negra, pimienta rosa y azafrán.",
+  "notas_corazon": "Ládenum, aceite de cade, bálsamo de gurjan y ruibarbo.",
+  "notas_fondo": "Cuero, cedro, pachulí, madera de gaiac, almizcle y musgo.",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 527,
+  "nombre": "Mayar Cherry",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-mayar-cherry.webp",
+
+  "descripcion": "Un oriental vainilla frutal jugoso con cereza y cacao, ideal para quienes buscan un aroma dulce y envolvente tanto de día como de noche.",
+
+  "notas_salida": "Fresa y bergamota.",
+  "notas_corazon": "Cherry jam (mermelada de cereza) y cacao.",
+  "notas_fondo": "Vainilla, ámbar y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 528,
+  "nombre": "Mayar Natural",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-mayar-natural.webp",
+
+  "descripcion": "Un oriental amaderado suave con notas cítricas y especiadas, ideal para uso diario y ocasiones casuales.",
+
+  "notas_salida": "Bergamota, limón y naranja.",
+  "notas_corazon": "Jazmín, rosa y especias suaves.",
+  "notas_fondo": "Maderas claras, almizcle y ámbar.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 529,
+  "nombre": "Mayar",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 55000,
+  "imagen": "img/lattafa-mayar-rosa.webp",
+
+  "descripcion": "Un floral frutal delicado con rosa y frutas rojas, ideal para uso diario y momentos románticos.",
+
+  "notas_salida": "Frutas rojas y bergamota.",
+  "notas_corazon": "Rosa, jazmín y peonía.",
+  "notas_fondo": "Vainilla, almizcle y maderas suaves.",
+  "stock": true,
+  "activo": true
+},
+{"id": 557,
+  "nombre": "Musamam",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/lattafa-musamam.webp",
+
+  "descripcion": "Dulce, amaderado y elegante. Ideal para uso nocturno, salidas y clima fresco.",
+
+  "notas_salida": "Azafrán, mandarina italiana y lavanda",
+  "notas_corazon": "Amberwood, cedro de Virginia y geranio.",
+  "notas_fondo": "Akigalawood, incienso y ládano.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 530,
+  "nombre": "Musamam Black",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 70000,
+  "imagen": "img/lattafa-musamam-black.webp",
+
+  "descripcion": "Un aromático amaderado intenso con lavanda, especias y un fondo cálido moderno con notas gourmand, ideal para destacar con presencia en climas fríos o salidas nocturnas.",
+
+  "notas_salida": "Lavanda, nuez moscada, bergamota y salvia.",
+  "notas_corazon": "Geranio, Rosyfolia™, mahonial y cedro.",
+  "notas_fondo": "Cocoapulse™, madera de arce (maple), pachulí, haba tonka y Ambrofix™.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 531,
+  "nombre": "Musamam White",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 86000,
+  "imagen": "img/lattafa-musamam-white.webp",
+
+  "descripcion": "Un aromático fresco con lavanda y cítricos, equilibrado con un corazón floral y base suave amaderada, ideal para uso diario y días activos.",
+
+  "notas_salida": "Lavanda y bergamota.",
+  "notas_corazon": "Geranio y flor de azahar del naranjo.",
+  "notas_fondo": "Haba tonka, almizcle y maderas claras.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 549,
+  "nombre": "Niche Emarati Khalid",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/lattafa-niche-emarati-khalid.webp",
+
+  "descripcion": "Un aromático especiado y amaderado, elegante y profundo, ligeramente dulce, muy versátil para uso en dias frescos o nocturno.",
+
+  "notas_salida": "Cuero, ládano y azafrán",
+  "notas_corazon": "Abedul, aceite de cade y pachulí",
+  "notas_fondo": "Cuero, madera de oud, bálsamo de Tolú y benjuí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 532,
+  "nombre": "Pride Nebras",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/lattafa-pride-nebras.webp",
+
+  "descripcion": "Un oriental vainilla gourmand con frutas rojas y mandarina que evoluciona hacia cacao y vainilla cremosa, envolvente y versátil para día o noche.",
+
+  "notas_salida": "Bayas rojas y mandarina.",
+  "notas_corazon": "Vainilla, cacao y rosa.",
+  "notas_fondo": "Haba tonka, ámbar, almizcle y azúcar.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 533,
+  "nombre": "Qaed Al Fursan",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 47000,
+  "imagen": "img/lattafa-qaed-al-fursan-black.webp",
+
+  "descripcion": "Una versión intensa del oriental amaderado con piña especiada y oud cálido, ideal para destacar con estilo en noches o eventos especiales.",
+
+  "notas_salida": "Piña y azafrán.",
+  "notas_corazon": "Jazmín y abeto balsámico.",
+  "notas_fondo": "Ámbar, cedro y madera de oud.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 534,
+  "nombre": "Qaed Al Fursan Unlimited",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 46000,
+  "imagen": "img/lattafa-qaed-al-fursan-white.webp",
+
+  "descripcion": "Un oriental fresco con acordes cítricos y especiados moderados, perfecto para uso diario con un toque elegante y moderno.",
+
+  "notas_salida": "Cítricos y lavanda.",
+  "notas_corazon": "Especias suaves y flores blancas.",
+  "notas_fondo": "Maderas blancas, ámbar y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 535,
+  "nombre": "Qaed Al Fursan Untamed",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 47000,
+  "imagen": "img/lattafa-qaed-al-fursan-brown.webp",
+
+  "descripcion": "Un oriental ambarado especiado con piña y especias cálidas que evoluciona hacia un fondo profundo de madera y ámbar, ideal para noches y climas fríos.",
+
+  "notas_salida": "Piña, azafrán y especias.",
+  "notas_corazon": "Jazmín, abeto balsámico y especias cálidas.",
+  "notas_fondo": "Ámbar, cedro y notas amaderadas profundas.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 537,
+  "nombre": "Sehr",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/lattafa-sehr.webp",
+
+  "descripcion": "Un floral frutal especiado con corazón dulce y base cálida amaderada, versátil para uso diario o noches casuales.",
+
+  "notas_salida": "Bergamota, manzana y frutos rojos.",
+  "notas_corazon": "Rosa, jazmín y lirio.",
+  "notas_fondo": "Vainilla, almizcle y maderas claras.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 538,
+  "nombre": "The Kingdom For Men",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/lattafa-the-kingdom-masculino.webp",
+
+  "descripcion": "Una aromática moderna con frescura herbal, corazón cálido de tabaco y vainilla y base profunda de haba tonka y ládano, ideal para hombres con presencia elegante.",
+
+  "notas_salida": "Lavanda, menta y salvia.",
+  "notas_corazon": "Vainilla, tabaco y flor de azahar del naranjo.",
+  "notas_fondo": "Haba tonka, benjuí y ládano.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 539,
+  "nombre": "The Kingdom Femenino",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-the-kingdom-femenino.webp",
+
+  "descripcion": "Un floral frutal gourmand jugoso con pera y peonía en la apertura, corazón dulce de praliné y tonka, y base cálida de vainilla y sándalo.",
+
+  "notas_salida": "Pera, peonía y casis (grosellero negro).",
+  "notas_corazon": "Praliné, jazmín y haba tonka.",
+  "notas_fondo": "Vainilla, sándalo, ámbar y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 540,
+  "nombre": "Yara Moi",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 52000,
+  "imagen": "img/lattafa-yara-moi.webp",
+
+  "descripcion": "Un floral frutal gourmand con jazmín y durazno en la salida y un corazón cálido de caramelo y ámbar, ideal para uso diario y ocasiones elegantes.",
+
+  "notas_salida": "Jazmín y durazno (melocotón).",
+  "notas_corazon": "Caramelo y ámbar.",
+  "notas_fondo": "Sándalo y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 541,
+  "nombre": "Yara Elixir",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 60000,
+  "imagen": "img/lattafa-yara-elixir.webp",
+
+  "descripcion": "Un gourmand floral dulce con fresa y grosella negra sobre un fondo cálido de vainilla y caramelo, ideal para destacar con presencia femenina.",
+
+  "notas_salida": "Strawberry y grosella negra.",
+  "notas_corazon": "Flor de azahar del naranjo y jazmín.",
+  "notas_fondo": "Vainilla, caramelo, ámbar y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 542,
+  "nombre": "Yara",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 53000,
+  "imagen": "img/lattafa-yara-rose.webp",
+
+  "descripcion": "Un floral frutal gourmand dulce con toques de orquídea y frutas tropicales sobre una base cálida de vainilla y sándalo, ideal para uso diario femenino elegante.",
+
+  "notas_salida": "Orquídea, heliotropo y mandarina.",
+  "notas_corazon": "Acorde gourmand y frutas tropicales.",
+  "notas_fondo": "Vainilla, almizcle y sándalo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 543,
+  "nombre": "Yara Tous",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 50000,
+  "imagen": "img/lattafa-yara-tous.webp",
+
+  "descripcion": "Un floral frutal tropical con mango, coco y maracuyá en la salida y base de vainilla suave, ideal para días cálidos y uso diario.",
+
+  "notas_salida": "Mango, coco y maracuyá (fruta de la pasión).",
+  "notas_corazon": "Jazmín, heliotropo y flor de azahar del naranjo.",
+  "notas_fondo": "Vainilla, almizcle y cachemira.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 544,
+  "nombre": "Yara Candy",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 52000,
+  "imagen": "img/lattafa-yara-candy.webp",
+
+  "descripcion": "Un floral frutal gourmand dulce con grosellas negras y caramelo efervescente, ideal para uso diario y momentos casuales.",
+
+  "notas_salida": "Grosellas negras y mandarina verde.",
+  "notas_corazon": "Caramelo de fresa efervescente y gardenia.",
+  "notas_fondo": "Vainilla, almizcle, ámbar y sándalo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 545,
+  "nombre": "Atlas EDP",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 55,
+  "tipo": "EDP",
+  "precio": 68000,
+  "imagen": "img/lattafa-atlas.webp",
+
+  "descripcion": "Un fougère acuático fresco y sofisticado con notas marinas y limón, ideal para quienes buscan un aroma versátil que evoque brisa marina y sofisticación.",
+
+  "notas_salida": "Notas marinas, sal y limón.",
+  "notas_corazon": "Davana e iris.",
+  "notas_fondo": "Ámbar gris, musgo de roble y sándalo.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 546,
+  "nombre": "Art of Universe",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/lattafa-pride-art-of-universe.webp",
+
+  "descripcion": "Una fresca y cítrica aromática con pera y flor de azahar, ideal para uso diario o momentos versátiles durante todo el año.",
+
+  "notas_salida": "Mandarina, jengibre, bergamota y menta.",
+  "notas_corazon": "Pera y flor de azahar del naranjo.",
+  "notas_fondo": "Almizcle, ámbar y cedro.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 550,
+  "nombre": "Vintage Radio",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/lattafa-vintage-radio.webp",
+
+  "descripcion": "Una fresca y cítrica aromática con pera y flor de azahar, ideal para uso diario o momentos versátiles durante todo el año.",
+
+  "notas_salida": "Lavanda, salvia y bergamota.",
+  "notas_corazon": "Ciruela, palo santo y pimienta negra.",
+  "notas_fondo": "Sándalo y madera de oud.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 558,
+  "nombre": "Pisa",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 92000,
+  "imagen": "img/lattafa-pisa.webp",
+
+  "descripcion": "Fresco, frutal y muy versátil. Ideal para uso diario, clima cálido y salidas informales.",
+
+  "notas_salida": "Mandarina, limón y bergamota",
+  "notas_corazon": "Cedro",
+  "notas_fondo": "Sándalo y ámbar",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 547,
+  "nombre": "Al Noble Ameer",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 71000,
+  "imagen": "img/lattafa-al-noble-ameer.webp",
+
+  "descripcion": "Un oriental amaderado especiado con manzana fresca, clavo y oud profundo, perfecto para destacar con elegancia en noches y eventos formales.",
+
+  "notas_salida": "Manzana, pimienta rosa y romero.",
+  "notas_corazon": "Clavos y notas florales.",
+  "notas_fondo": "Oud, pachulí, ciprés, ládano y vetiver.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 548,
+  "nombre": "Al Noble Safeer",
+  "marca": "Lattafa",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 56000,
+  "imagen": "img/lattafa-al-noble-safeer.webp",
+
+  "descripcion": "Una oriental amaderada fresca y especiada con notas herbales y cítricas, ideal para uso diario o salidas casuales con carácter distintivo.",
+
+  "notas_salida": "Artemisia y bergamota.",
+  "notas_corazon": "Notas herbales, verdes y especiadas.",
+  "notas_fondo": "Madera de gaiac, junípero, patchouli, incienso, cumin y labdanum.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 555,
+  "nombre": "Teriaq Intense",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/lattafa-teriaq-intense.webp",
+
+  "descripcion": "Dulce, cálido y muy envolvente. Ideal para noche, clima fresco y quienes buscan un aroma intenso y seductor.",
+
+  "notas_salida": "Azafrán y bergamota.",
+  "notas_corazon": "Licor de ciruela y canela.",
+  "notas_fondo": "Ambar, haba tonka y benjuí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 556,
+  "nombre": "Teriaq",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 58000,
+  "imagen": "img/lattafa-teriaq.webp",
+
+  "descripcion": "Dulce, cálido y especiado. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Caramelo, almendra amarga, chabacano y pimienta rosa.",
+  "notas_corazon": "Miel, ruibarbo, flores blancas y rosa.",
+  "notas_fondo": "Cuero, vainilla, almizcle, ládano y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 600,
+  "nombre": "Jean Lowe Immortal",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/maison-alhambra-jean-lowe-immortal.webp",
+
+  "descripcion": "Un oriental fresco especiado con jengibre y pomelo, equilibrado con toques herbales y base cálida ambarada, ideal para uso diario y ocasiones versátiles.",
+
+  "notas_salida": "Jengibre, pomelo (toronja) y bergamota.",
+  "notas_corazon": "Romero, notas acuáticas, salvia y geranio.",
+  "notas_fondo": "Ambroxan, ámbar y ládano.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 601,
+  "nombre": "Jean Lowe Noir",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 54000,
+  "imagen": "img/maison-alhambra-jean-lowe-noir.webp",
+
+  "descripcion": "Un oriental amaderado especiado con oud e incienso iniciales y corazón floral frutal, ideal para quienes buscan un aroma intenso y sofisticado.",
+
+  "notas_salida": "Oud (madera de agar), incienso.",
+  "notas_corazon": "Rosa, frambuesa, azafrán y abedul.",
+  "notas_fondo": "Ámbar, benjuí y geranio.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 602,
+  "nombre": "Jorge di Profumo",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 46000,
+  "imagen": "img/maison-alhambra-jorge-profumo.webp",
+
+  "descripcion": "Un aromático cítrico especiado fresco con lavanda y tabaco que evoca sofisticación moderna, ideal para uso diario y ocasiones casuales o formales.",
+
+  "notas_salida": "Bergamota, limón siciliano y pimienta negra.",
+  "notas_corazon": "Lavanda, tabaco y geranio.",
+  "notas_fondo": "Sándalo, vetiver y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 603,
+  "nombre": "Philos Pura",
+  "marca": "Maison Alhambra",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 58000,
+  "imagen": "img/maison-alhambra-philos-pura.webp",
+
+  "descripcion": "Un aromático frutal cítrico fresco con corazón jugoso de frutas y base cálida de vainilla y ámbar, perfecto para uso diario elegante.",
+
+  "notas_salida": "Naranja, bergamota y limón.",
+  "notas_corazon": "Frutas jugosas.",
+  "notas_fondo": "Almizcle blanco, vainilla de Madagascar y ámbar.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 604,
+  "nombre": "Salvo",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 48000,
+  "imagen": "img/maison-alhambra-salvo.webp",
+
+  "descripcion": "Un oriental fougère fresco y especiado con bergamota y lavanda sobre un fondo cálido de ambroxan y vainilla, ideal para uso diario y ocasiones versátiles.",
+
+  "notas_salida": "Bergamota.",
+  "notas_corazon": "Lavanda, pimienta de Sichuan, anís estrellado y nuez moscada.",
+  "notas_fondo": "Ambroxan y vainilla.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 605,
+  "nombre": "Salvo Elixir",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 47000,
+  "imagen": "img/maison-alhambra-salvo-elixir.webp",
+
+  "descripcion": "Un oriental fougère intenso con pimienta negra, tabaco y piña al inicio, corazón de pachulí e iris y base cálida de ámbar y vainilla, ideal para noches con presencia masculina.",
+
+  "notas_salida": "Pimienta negra, tabaco y piña.",
+  "notas_corazon": "Pachulí, iris y café.",
+  "notas_fondo": "Notas amaderadas, ámbar, vainilla, benjuí y ládano.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 606,
+  "nombre": "Sceptre Malachite",
+  "marca": "Maison Alhambra",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 69000,
+  "imagen": "img/maison-alhambra-sceptre-malachite.webp",
+
+  "descripcion": "Un oriental amaderado fresco y frutal con mandarina verde y grosella negra sobre corazón aromático especiado, ideal para uso diario en primavera y verano.",
+
+  "notas_salida": "Mandarina verde, bergamota y grosella negra.",
+  "notas_corazon": "Lavanda, jazmín, notas aromáticas, pimienta rosa y especias.",
+  "notas_fondo": "Ámbar, almizcle, notas amaderadas y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 700,
+  "nombre": "Hawas for Him",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/rasasi-hawas-him.webp",
+
+  "descripcion": "Un aromático acuático que fusiona cítricos y manzana con un corazón acuático especiado y base cálida amaderada, ideal para el hombre versátil.",
+
+  "notas_salida": "Manzana, bergamota, limón y canela.",
+  "notas_corazon": "Notas acuosas, flor de azahar y cardamomo.",
+  "notas_fondo": "Ámbar gris, pachulí y madera flotante.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 701,
+  "nombre": "Hawas Ice",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 95000,
+  "imagen": "img/rasasi-hawas-ice.webp",
+
+  "descripcion": "Una versión fresca del clásico Hawas, con un corazón frutal especiado sobre base cálida y amaderada, ideal para uso diario en climas cálidos.",
+
+  "notas_salida": "Manzana, limón italiano, bergamota.",
+  "notas_corazon": "Ciruela, flor de azahar y cardamomo.",
+  "notas_fondo": "Almizcle, ámbar y madera a la deriva.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 702,
+  "nombre": "Hawas Malibu",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 88000,
+  "imagen": "img/rasasi-hawas-malibu.webp",
+
+  "descripcion": "Un aromático frutal tropical con piña, cítricos y ámbar cálido, ideal para uso diario o días de verano con energía y frescura.",
+
+  "notas_salida": "Piña, naranja y pomelo (toronja).",
+  "notas_corazon": "Ámbar, raíz de lirio (orris) y lavanda.",
+  "notas_fondo": "Haba tonka, almizcle, cashmeran y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 703,
+  "nombre": "Hawas Fire",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 90000,
+  "imagen": "img/rasasi-hawas-fire.webp",
+
+  "descripcion": "Una versión intensa y sofisticada del Hawas con hierbas aromáticas y notas marinas sobre base cálida de ámbar mineral, perfecta para uso versátil en día o noche.",
+
+  "notas_salida": "Esclarea (salvia esclarea).",
+  "notas_corazon": "Notas marinas y jazmín egipcio.",
+  "notas_fondo": "Ámbar, notas minerales y ámbar gris.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 704,
+  "nombre": "Hawas Tropical",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 95000,
+  "imagen": "img/rasasi-hawas-tropical.webp",
+
+  "descripcion": "Una versión fresca y tropical de Hawas con agua de coco y jengibre que evoca brisa marina y frutas jugosas sobre una base cálida de madera y almizcle, ideal para días cálidos y uso diario.",
+
+  "notas_salida": "Agua de coco, hoja de higuera y jengibre.",
+  "notas_corazon": "Coco, higo y menta.",
+  "notas_fondo": "Sándalo, haba tonka y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 705,
+  "nombre": "Hawas Black",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 60000,
+  "imagen": "img/rasasi-hawas-black.webp",
+
+  "descripcion": "Un aromático frutal con apertura cítrica y frutal fresca y base cálida amaderada, ideal para hombres que buscan una fragancia moderna y versátil.",
+
+  "notas_salida": "Bergamota, piña y pomelo (toronja).",
+  "notas_corazon": "Patchulí, cedro y jazmín.",
+  "notas_fondo": "Musgo de roble, notas amaderadas y ámbar.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 706,
+  "nombre": "Hawas Verde",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 95000,
+  "imagen": "img/rasasi-hawas-verde.webp",
+
+  "descripcion": "Una versión fresca y aromática con lima y manzana verde sobre un corazón herbal y base cálida de pachulí y ámbar, ideal para días cálidos y uso diario.",
+
+  "notas_salida": "Lima (limón verde) y manzana verde.",
+  "notas_corazon": "Romero y notas herbales verdes.",
+  "notas_fondo": "Pachulí, ámbar y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 707,
+  "nombre": "Hawas Kobra",
+  "marca": "Rasasi",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 105000,
+  "imagen": "img/rasasi-hawas-kobra.webp",
+
+  "descripcion": "Fresco, frutal y muy versátil. Ideal para uso diario, clima cálido y salidas informales.",
+
+  "notas_salida": "Jengibre, bergamota y naranja tangerina",
+  "notas_corazon": "Canela, té verde y neroli",
+  "notas_fondo": "Almizcle, notas amaderadas y ámbar",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 800,
+  "nombre": "Rayhaan Tiger",
+  "marca": "Rayhaan",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 63000,
+  "imagen": "img/rayhaan-tiger.webp",
+
+  "descripcion": "Un oriental amaderado especiado cálido y sofisticado con clavo, nuez moscada y corazón cremoso de leche y rosa, ideal para hombres con presencia intensa en noches o eventos especiales.",
+
+  "notas_salida": "Nuez moscada, clavo y limón.",
+  "notas_corazon": "Leche, rosa y davana.",
+  "notas_fondo": "Ámbar, pachulí, incienso y ládano.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 801,
+  "nombre": "Rayhaan Jungle Vibe",
+  "marca": "Rayhaan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/rayhaan-jungle-vibe.webp",
+
+  "descripcion": "Un aromático fresco verde con higo, cítricos y acordes acuáticos sobre un fondo cremoso de sándalo, perfecto para uso diario en primavera y verano.",
+
+  "notas_salida": "Higo, pomelo (toronja) y bergamota.",
+  "notas_corazon": "Notas verdes y acuáticas.",
+  "notas_fondo": "Sándalo y almizcle blanco.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 802,
+  "nombre": "Rayhaan Tropical Vibe",
+  "marca": "Rayhaan",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 75000,
+  "imagen": "img/rayhaan-tropical-vibe.webp",
+
+  "descripcion": "Un oriental frutal tropical con mango, piña y coco sobre un fondo cálido de ámbar y vetiver, ideal para días cálidos y vibraciones veraniegas.",
+
+  "notas_salida": "Mango, piña y bergamota.",
+  "notas_corazon": "Coco y acordes marinos.",
+  "notas_fondo": "Ámbar, sándalo, almizcle y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 803,
+  "nombre": "Rayhaan Ocean Rush",
+  "marca": "Rayhaan",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 60000,
+  "imagen": "img/rayhaan-ocean-rush.webp",
+
+  "descripcion": "Un aromático acuático fresco con cítricos marinos y notas herbales, ideal para uso diario en climas cálidos o actividades al aire libre.",
+
+  "notas_salida": "Cascalone, bergamota, aquozone y mandarina.",
+  "notas_corazon": "Lavanda, ciprés y romero.",
+  "notas_fondo": "Ámbar, almizcle y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 850,
+  "nombre": "Montale Arabians Tonka",
+  "marca": "Montale",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 240000,
+  "imagen": "img/montale-arabians-tonka.webp",
+
+  "descripcion": "Un oriental amaderado especiado con oud, rosa y tonka dulce, ideal para climas fríos y noches con presencia elegante.",
+
+  "notas_salida": "Azafrán y bergamota.",
+  "notas_corazon": "Oud (madera de agar) y rosa de Bulgaria.",
+  "notas_fondo": "Haba tonka, caña de azúcar, ámbar, almizcle blanco y musgo de roble.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 900,
+  "nombre": "Volare Rise & Shine",
+  "marca": "Volare",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 59000,
+  "imagen": "img/volare-rise-shine.webp",
+
+  "descripcion": "Una fragancia cítrica aromática fresca y floral que evoca energía matinal con notas marinas suaves y fondo cálido, ideal para uso diario en todas las estaciones.",
+
+  "notas_salida": "Cardamomo, cilantro, bergamota, limón, mandarina y flor de azahar del naranjo.",
+  "notas_corazon": "Lirio de los valles, jazmín y rosa de Bulgaria.",
+  "notas_fondo": "Maderas preciosas, sándalo, cedro, ámbar, té verde y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 901,
+  "nombre": "Volare Santorini Beaches",
+  "marca": "Volare",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/volare-santorini-beach.webp",
+
+  "descripcion": "Un aromático frutal verde con apertura fresca de ruibarbo y pera, corazón floral mediterráneo y base cálida amaderada, ideal para días cálidos y uso diario.",
+
+  "notas_salida": "Ruibarbo, grosella negra y pera.",
+  "notas_corazon": "Tuberosa, rosa turca y flor de azahar del naranjo.",
+  "notas_fondo": "Avellana, sándalo y notas amaderadas.",
+  "stock": false,
+  "activo": true
+},
+{
+  "id": 902,
+  "nombre": "Volare Le Beau",
+  "marca": "Volare",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/volare-le-beau.webp",
+
+  "descripcion": "Un oriental amaderado fresco con bergamota y coco en la apertura y una base cálida y sensual de haba tonka y miel, perfecto para hombres que buscan un aroma moderno y versátil.",
+
+  "notas_salida": "Bergamota y coco.",
+  "notas_corazon": "Coco cremoso y benjuí.",
+  "notas_fondo": "Haba tonka, miel y tabaco.",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 903,
+  "nombre": "Volare Le Male",
+  "marca": "Volare",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 65000,
+  "imagen": "img/volare-le-male.webp",
+
+  "descripcion": "Dulce, cálido y seductor. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Bergamota, lavanda",
+  "notas_corazon": "Vainilla, especias",
+  "notas_fondo": "Ambar, maderas, haba tonka",
+  "stock": true,
+  "activo": false
+},
+{
+  "id": 950,
+  "nombre": "Zimaya Tiramisu Caramel",
+  "marca": "Zimaya",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 68000,
+  "imagen": "img/zimaya-tiramisu-caramel.webp",
+
+  "descripcion": "Un gourmand dulce y cremoso con notas de tiramisú, café y caramelo, ideal para quienes buscan un aroma acogedor y delicioso en climas fríos o momentos especiales.",
+
+  "notas_salida": "Cacao y café.",
+  "notas_corazon": "Caramelo, vainilla y crema.",
+  "notas_fondo": "Azúcar tostada y haba tonka.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 951,
+  "nombre": "Zimaya Tiramisu Coco",
+  "marca": "Zimaya",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 68000,
+  "imagen": "img/zimaya-tiramisu-coco.webp",
+
+  "descripcion": "Un gourmand cremoso con coco y notas de tiramisú, perfecto para quienes buscan una fragancia dulce, suave y deliciosa para uso diario o tardes especiales.",
+
+  "notas_salida": "Coco y cacao.",
+  "notas_corazon": "Crema de tiramisú y vainilla.",
+  "notas_fondo": "Caramelo, azúcar tostada y haba tonka.",
+  "stock": false,
+  "activo": true
+}
+]
