@@ -18,6 +18,7 @@ let perfumes     = [];
 let decants      = [];
 let promos       = [];
 let desodorantes = [];
+let favoritos = JSON.parse(localStorage.getItem('rulo_favs')) || [];
 
 function moneyARS(n){
   return new Intl.NumberFormat("es-AR").format(n);
@@ -36,15 +37,54 @@ Vi en la web el *${perfume.nombre}* (${perfume.ml}ml - ${perfume.tipo}) por ${pr
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
+function toggleFav(id, event) {
+    if(event) event.stopPropagation(); 
+    const index = favoritos.indexOf(id);
+    if (index > -1) { favoritos.splice(index, 1); } 
+    else { favoritos.push(id); }
+    localStorage.setItem('rulo_favs', JSON.stringify(favoritos));
+    updateFavUI();
+    applyFilters(); 
+}
+
+function updateFavUI() {
+    const countEl = document.getElementById('favCount');
+    const floatBtn = document.getElementById('favButton');
+    if(countEl) countEl.innerText = favoritos.length;
+    if(floatBtn) floatBtn.style.display = favoritos.length > 0 ? 'flex' : 'none';
+}
+
+function sendAllFavs() {
+  const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
+  const seleccionados = todos.filter(p => favoritos.includes(p.id));
+  
+  // 1. Creamos el texto de la lista de forma manual y limpia
+  let listaItems = "";
+  seleccionados.forEach(p => {
+    listaItems += "- " + p.nombre + " (" + p.ml + "ml)%0A";
+  });
+  
+  // 2. Armamos el mensaje final pegando las partes con %0A para los saltos de línea
+  const saludo = "Hola Rulo! Me interesan estos productos de tu catalogo:";
+  const despedida = "¿Los tenes disponibles?";
+  
+  const mensajeFinal = saludo + "%0A%0A" + listaItems + "%0A" + despedida;
+
+  // 3. Abrimos el link (Sin usar encodeURIComponent otra vez para no duplicar códigos)
+  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + mensajeFinal, "_blank");
+}
+
 function cardTemplate(p){
   const placeholder = imgSrc("img/placeholder.webp");
 
   return `
     <article class="card">
       <div class="thumb">
-        <img src="${imgSrc(p.imagen)}"
-             alt="${p.nombre}"
-             onerror="this.onerror=null; this.src='${placeholder}'">
+        ${p.stock === false ? '<div class="badge-out">Agotado</div>' : ''}
+        <img src="${imgSrc(p.imagen)}" alt="${p.nombre}" onerror="this.onerror=null; this.src='${placeholder}'">
+        <button class="btn-fav-icon ${favoritos.includes(p.id) ? 'active' : ''}" onclick="toggleFav(${p.id}, event)">
+            ${favoritos.includes(p.id) ? '❤️' : '🤍'}
+        </button>
       </div>
 
       <div class="content">
@@ -318,6 +358,7 @@ async function init(){
 }
 
 init();
+updateFavUI();
 
 // FIX: Eliminado el `closeModal()` suelto que se ejecutaba al cargar la página
 
