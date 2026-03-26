@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": 30001,
     "nombre": "Desodorante Odyssey Limoni",
     "marca": "Armaf",
@@ -8,11 +8,10 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-limoni.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma fresco y cítrico.",
     "stock": true,
     "activo": true
   },
-
   {
     "id": 30002,
     "nombre": "Desodorante Odyssey Spectra",
@@ -22,21 +21,20 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-spectra.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma intenso y amaderado.",
     "stock": true,
     "activo": true
   },
-
   {
     "id": 30003,
     "nombre": "Desodorante Odyssey Homme",
     "marca": "Armaf",
-    "genero": "Unisex",
+    "genero": "Hombre",
     "ml": 200,
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-homme.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal masculino de larga duración con aroma fresco y especiado.",
     "stock": true,
     "activo": true
   },
@@ -49,11 +47,10 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-candee.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal femenino de larga duración con aroma dulce y floral.",
     "stock": true,
     "activo": true
   },
-
   {
     "id": 30004,
     "nombre": "Desodorante Club de Nuit Untold",
@@ -63,7 +60,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-cdn-untold.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma elegante y sofisticado.",
     "stock": true,
     "activo": true
   },
@@ -76,7 +73,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-yara-moi.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma dulce y oriental.",
     "stock": true,
     "activo": true
   },
@@ -89,7 +86,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-yara-tous.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma floral y suave.",
     "stock": true,
     "activo": true
   },
@@ -102,7 +99,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-yara-candy.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma dulce y afrutado.",
     "stock": true,
     "activo": true
   },
@@ -115,12 +112,12 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-yara-rosa.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma floral y rosado.",
     "stock": true,
     "activo": true
   },
   {
-    "id": 3009,
+    "id": 30009,
     "nombre": "Desodorante Badee Al Oud Sublime",
     "marca": "Lattafa",
     "genero": "Mujer",
@@ -128,7 +125,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-badee-al-oud-sublime.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma oriental y especiado.",
     "stock": true,
     "activo": true
   },
@@ -141,7 +138,7 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-honor-glory.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma fresco y amaderado.",
     "stock": true,
     "activo": true
   },
@@ -154,22 +151,20 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-amethyst.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante corporal de larga duración con aroma floral y almizclado.",
     "stock": true,
     "activo": true
   },
-
-
   {
     "id": 30020,
     "nombre": "Desodorante antitranspirante Mandarin Sky",
     "marca": "Armaf",
-    "genero": "hombre",
+    "genero": "Hombre",
     "ml": 75,
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-mandarin-anti.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en Asad.",
+    "descripcion": "Desodorante antitranspirante masculino con aroma cítrico inspirado en Asad.",
     "stock": true,
     "activo": true
   },
@@ -182,9 +177,8 @@
     "tipo": "Desodorante",
     "precio": 13500,
     "imagen": "img/desos/deso-odyssey-mega.webp",
-    "descripcion": "Desodorante corporal con aroma inspirado en .",
+    "descripcion": "Desodorante antitranspirante de larga duración con aroma intenso y masculino.",
     "stock": true,
     "activo": true
   }
-
 ]

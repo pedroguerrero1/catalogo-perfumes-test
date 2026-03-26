@@ -4,39 +4,46 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rulo BarberShop | Catálogo de Perfumes</title>
-
+ 
+  <!-- FIX: Fuentes Poppins y Roboto cargadas correctamente -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+ 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-
-<!-- Modal detalle perfume -->
+ 
+<body>
+ 
+<!-- FIX: Modal movido DENTRO del body (antes estaba fuera) -->
 <div id="modal" class="modal hidden" aria-hidden="true">
   <div class="modal__backdrop" data-close="true"></div>
-
+ 
   <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <button class="modal__close" id="modalClose" aria-label="Cerrar">✕</button>
-
+ 
     <div class="modal__media">
       <img id="modalImg" src="" alt="Perfume" />
     </div>
-
+ 
     <div class="modal__content">
       <div class="modal__top">
         <h2 id="modalTitle" class="modal__title"></h2>
         <div id="modalPrice" class="modal__price"></div>
       </div>
-
+ 
       <div id="modalBadges" class="modal__badges"></div>
-
+ 
       <p id="modalDesc" class="modal__desc"></p>
-
-      <p id="modal-descripcion"></p>
-
+ 
+      <!-- FIX: Eliminado <p id="modal-descripcion"> que era código muerto -->
+ 
       <div class="notas">
-         <p><strong>Salida:</strong> <span id="notas-salida"></span></p>
-         <p><strong>Corazón:</strong> <span id="notas-corazon"></span></p>
-         <p><strong>Fondo:</strong> <span id="notas-fondo"></span></p>
+        <p><strong>Salida:</strong> <span id="notas-salida"></span></p>
+        <p><strong>Corazón:</strong> <span id="notas-corazon"></span></p>
+        <p><strong>Fondo:</strong> <span id="notas-fondo"></span></p>
       </div>
-
+ 
       <div class="modal__grid">
         <div class="modal__item">
           <div class="modal__label">Duración</div>
@@ -47,15 +54,14 @@
           <div id="modalEstela" class="modal__value"></div>
         </div>
       </div>
-
+ 
       <a id="modalWa" class="btn btn--wa" href="#" target="_blank" rel="noopener">
         Consultar por WhatsApp
       </a>
     </div>
   </div>
 </div>
-
-<body>
+ 
 <header class="topbar">
   <div class="brand">
     <img src="img/logo.png" alt="Rulo BarberShop" class="logo logo--icon" />
@@ -64,7 +70,7 @@
       <div class="brandSub">BarberShop • Perfumes Árabes</div>
     </div>
   </div>
-
+ 
   <div class="actions">
     <input
       id="search"
@@ -72,10 +78,10 @@
       type="search"
       placeholder="Buscar perfume (ej: Asad, Khamrah, Afnan)..."
     />
-
+ 
     <div class="actions-row">
       <button class="menu-toggle" id="menuToggle">Categoría</button>
-
+ 
       <div class="select-wrap">
         <select id="filter" class="select">
           <option value="all">Todos</option>
@@ -88,7 +94,7 @@
       </div>
     </div>
   </div>
-
+ 
   <nav class="mobile-menu" id="mobileMenu">
     <a href="#perfumes">Perfumes</a>
     <a href="#decants">Decants</a>
@@ -96,68 +102,60 @@
     <a href="#desodorantes">Desodorantes</a>
   </nav>
 </header>
-
-  <main class="container">
-    <section class="hero">
-      <h1>Catálogo de Perfumes Árabes</h1>
-      <!-- <p class="confianza">
-        Productos originales || Probadores disponibles en el local
-      </p> -->
-
-      <p class="subtitle">
-        Elegí tu fragancia • Mirá precio<br>
-        Tocá “Consultar” y te respondemos por WhatsApp
-      </p>
-    </section>
-
-    <section class="home-categories"></section>
-
-
-    <section id="perfumes">
-      <h2 class="section-title">Perfumes</h2>
-      <section id="grid" class="grid"></section>
-    </section>
-
-    <section id="decants" class="section-block">
-      <h2 class="section-title">Decants</h2>
-      <div id="decantsGrid" class="grid"></div>
-    </section>
-
-    <section id="promos" class="section-block">
-      <h2 class="section-title">Promociones</h2>
-      <div id="promosGrid" class="grid"></div>
-    </section>
-
-    <section id="desodorantes" class="section-block">
-      <h2 class="section-title">Desodorantes</h2>
-      <div id="desodorantsGrid" class="grid"></div>
-    </section>
-  
-
-    <div class="store-status">
-      🟢 Atención por WhatsApp activa
-    </div>
-
-    <div id="empty" class="empty hidden">
-      <p>No se encontraron perfumes con esos filtros.</p>
-    </div>
-
-    
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> Rulo BarberShop — Barbería y Perfumería</p>
-  </footer>
-
-  <button id="topBtn" type="button" aria-label="Volver arriba">↑</button>
-  
-  <script src="js/app.js"></script>
-
-  <a class="wa-float" href="https://wa.me/5493535669706" target="_blank" aria-label="WhatsApp">
+ 
+<main class="container">
+  <section class="hero">
+    <h1>Catálogo de Perfumes Árabes</h1>
+    <p class="subtitle">
+      Elegí tu fragancia • Mirá precio<br>
+      Tocá "Consultar" y te respondemos por WhatsApp
+    </p>
+  </section>
+ 
+  <section class="home-categories"></section>
+ 
+  <section id="perfumes">
+    <h2 class="section-title">Perfumes</h2>
+    <section id="grid" class="grid"></section>
+  </section>
+ 
+  <section id="decants" class="section-block">
+    <h2 class="section-title">Decants</h2>
+    <div id="decantsGrid" class="grid"></div>
+  </section>
+ 
+  <!-- FIX: Sección Promos se oculta automáticamente si no hay datos (ver app.js) -->
+  <section id="promos" class="section-block">
+    <h2 class="section-title">Promociones</h2>
+    <div id="promosGrid" class="grid"></div>
+  </section>
+ 
+  <section id="desodorantes" class="section-block">
+    <h2 class="section-title">Desodorantes</h2>
+    <div id="desodorantsGrid" class="grid"></div>
+  </section>
+ 
+  <div class="store-status">
+    🟢 Atención por WhatsApp activa
+  </div>
+ 
+  <div id="empty" class="empty hidden">
+    <p>No se encontraron perfumes con esos filtros.</p>
+  </div>
+</main>
+ 
+<footer class="footer">
+  <p>© <span id="year"></span> Rulo BarberShop — Barbería y Perfumería</p>
+</footer>
+ 
+<button id="topBtn" type="button" aria-label="Volver arriba">↑</button>
+ 
+<a class="wa-float" href="https://wa.me/5493535669706" target="_blank" aria-label="WhatsApp">
   <img src="img/whatsapp.svg" alt="WhatsApp">
-  </a>
-
-  
-
+</a>
+ 
+<script src="js/app.js"></script>
+ 
 </body>
 </html>
+ 
