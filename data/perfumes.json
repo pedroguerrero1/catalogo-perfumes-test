@@ -36,6 +36,24 @@
   "activo": true
  },
  {
+  "id": 852,
+  "nombre": "Stronger With You Intensely",
+  "marca": "Emmporio Armani",
+  "genero": "Hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 230000,
+  "imagen": "img/stronger-with-you-int.webp",
+
+  "descripcion": "Un aromático ambarado gourmand con corazón jugoso de toffee y canela, y base cálida de vainilla y ámbar, perfecto para uso nocturno seductor.",
+
+  "notas_salida": "Pimienta rosa, enebro y violeta",
+  "notas_corazon": "Tófe, canela, lavanda y salvia",
+  "notas_fondo": "Vainilla, ámbar, haba tonka y gamuza",
+  "stock": true,
+  "activo": true
+ },
+ {
   "id": 101,
   "nombre": "9PM Night Out",
   "marca": "Afnan",
@@ -393,6 +411,24 @@
   "notas_salida": "Lichi, bergamota y pimienta rosa.",
   "notas_corazon": "Raíz de lirio.",
   "notas_fondo": "Praliné, sándalo y ambroxan.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 218,
+  "nombre": "Club de Blue Iconic",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 81000,
+  "imagen": "img/armaf-club-de-nuit-iconic.webp",
+
+  "descripcion":"Dulce, frutal y elegante. Ideal para salidas, ocasiones especiales y quienes buscan un aroma femenino y llamativo.",
+
+  "notas_salida": "Pomelo, limon, menta y pimienta rosa",
+  "notas_corazon": "Jengibre, melón, jazmín y nuez moscada",
+  "notas_fondo": "Notas amaderadas, ambar, cedro y pachulí",
   "stock": true,
   "activo": true
 },
@@ -1909,6 +1945,42 @@
   "activo": true
 },
 {
+  "id": 557,
+  "nombre": "Victoria",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 77000,
+  "imagen": "img/lattafa-victoria.webp",
+
+  "descripcion": "Un aromático frutal floral vibrante con corazón jugoso de frutos rojos y base cálida de vainilla y cedro, perfecto para un uso diario alegre y femenino.",
+
+  "notas_salida": "Tarta de limón y merengue",
+  "notas_corazon": "Neroli",
+  "notas_fondo": "Vainilla",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 558,
+  "nombre": "Ishq Al Shuyukh Gold",
+  "marca": "Lattafa",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/shuyukh.webp",
+
+  "descripcion": "Dulce, cálido y especiado. Ideal para noche, salidas y clima fresco.",
+
+  "notas_salida": "Caramelo y azafrán",
+  "notas_corazon": "Gamuza, cuero y haba tonka",
+  "notas_fondo": "Vainilla, ámbar y almizcle.",
+  "stock": true,
+  "activo": true
+},
+{
   "id": 600,
   "nombre": "Jean Lowe Immortal",
   "marca": "Maison Alhambra",
@@ -1972,7 +2044,7 @@
   "precio": 58000,
   "imagen": "img/maison-alhambra-philos-pura.webp",
 
-  "descripcion": "Un aromático frutal cítrico fresco con corazón jugoso de frutas y base cálida de vainilla y ámbar, perfecto para uso diario elegante.",
+  "descripcion": "Un oriental especiado opulento con corazón de gamuza y cacao, y base densa de vainilla y ámbar, perfecto para ocasiones especiales y climas fríos.",
 
   "notas_salida": "Naranja, bergamota y limón.",
   "notas_corazon": "Frutas jugosas.",
@@ -2031,6 +2103,42 @@
   "notas_salida": "Mandarina verde, bergamota y grosella negra.",
   "notas_corazon": "Lavanda, jazmín, notas aromáticas, pimienta rosa y especias.",
   "notas_fondo": "Ámbar, almizcle, notas amaderadas y vetiver.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 607,
+  "nombre": "Your Touch Amber",
+  "marca": "Maison Alhambra",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 48000,
+  "imagen": "img/maison-alhambra-your-touch-amber.webp",
+
+  "descripcion": "Envolvente, ambarado y aterciopelado. Ideal para noche, ocasiones especiales y climas frescos.",
+
+  "notas_salida": "Lavanda",
+  "notas_corazon": "Ambar",
+  "notas_fondo": "Vainilla",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 608,
+  "nombre": "Your Touch Extrait",
+  "marca": "Maison Alhambra",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 48000,
+  "imagen": "img/maison-alhambra-your-touch-extrait.webp",
+
+  "descripcion": "Intenso, especiado y muy elegante. Ideal para noche, salidas y clima fresco, con untoque moderno y seductor.",
+
+  "notas_salida": "Cardamomo, hoja de violet y menta",
+  "notas_corazon": "Piña, lavand y melón",
+  "notas_fondo": "Haba tonka, avellana y cedro blanco",
   "stock": true,
   "activo": true
 },
@@ -2179,6 +2287,24 @@
   "activo": true
 },
 {
+  "id": 708,
+  "nombre": "Hawas For Her",
+  "marca": "Rasasi",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 57000,
+  "imagen": "img/rasasi-hawas-for-her.webp",
+
+  "descripcion": "Vibrante, jugoso y muy elegante. Ideal para diario, salidas y clima cálido, con un toque moderno y seductor..",
+
+  "notas_salida": " Granada, manzana y pomelo",
+  "notas_corazon": "Iris, jazmín sambac y cítricos",
+  "notas_fondo": "Praliné, pachulí y vetiver",
+  "stock": false,
+  "activo": true
+},
+{
   "id": 800,
   "nombre": "Rayhaan Tiger",
   "marca": "Rayhaan",
@@ -2247,6 +2373,42 @@
   "notas_salida": "Cascalone, bergamota, aquozone y mandarina.",
   "notas_corazon": "Lavanda, ciprés y romero.",
   "notas_fondo": "Ámbar, almizcle y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 804,
+  "nombre": "Rayhaan Corium",
+  "marca": "Rayhaan",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 77000,
+  "imagen": "img/rayhaan-ocean-rush.webp",
+
+  "descripcion": "Ahumado, ambarado y sofisticado. Ideal para eventos formales, climas templados y uso nocturno, con un carácter de cuero moderno y distinguido.",
+
+  "notas_salida": "Castaña, especias y elemí",
+  "notas_corazon": "Salvia",
+  "notas_fondo": "Vainilla, cuero y madera de oud",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 805,
+  "nombre": "Rayhaan Elixir",
+  "marca": "Rayhaan",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 79000,
+  "imagen": "img/rayhaan-elixir.webp",
+
+  "descripcion": "Vibrante y magnético. Ideal para noche, salidas y climas frescos, dulce de vainilla y lavanda que aporta un toque moderno y seductor.",
+
+  "notas_salida": "Menta y bergamota",
+  "notas_corazon": "Benjuí y lavanda",
+  "notas_fondo": "Vainilla y haba tonka",
   "stock": true,
   "activo": true
 },

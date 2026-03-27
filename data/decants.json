@@ -1,5 +1,5 @@
 [
-    {
+  {
     "id": 10001,
     "nombre": "Decant Erba Pura",
     "marca": "Xerjoff",
@@ -12,7 +12,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10002,
     "nombre": "Decant Valentino Born in Roma",
     "marca": "Valentino",
@@ -21,6 +21,19 @@
     "tipo": "Decant",
     "precio": 20000,
     "imagen": "img/dec/decant-valentino-born-extradose.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10137,
+    "nombre": "Decant Stronger With You Intensely",
+    "marca": "Emporio Armani",
+    "genero": "Hombre",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 19000,
+    "imagen": "img/dec/decant-stronger-with-you-int.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -272,7 +285,20 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
+    "id": 10138,
+    "nombre": "Decant Club de Nuit Iconic",
+    "marca": "Armaf",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 9000,
+    "imagen": "img/dec/decant-club-de-nuit-iconic.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10022,
     "nombre": "Decant Odyssey Go Mango",
     "marca": "Armaf",
@@ -402,7 +428,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10032,
     "nombre": "Decant Bharara King EDP",
     "marca": "Bharara",
@@ -675,7 +701,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10052,
     "nombre": "Decant Badee Al Oud Amethyst",
     "marca": "Lattafa",
@@ -1052,7 +1078,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10079,
     "nombre": "Decant Musamam",
     "marca": "Lattafa",
@@ -1091,7 +1117,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10082,
     "nombre": "Decant Niche Emarati Khalid",
     "marca": "Lattafa",
@@ -1221,7 +1247,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10092,
     "nombre": "Decant Yara",
     "marca": "Lattafa",
@@ -1312,7 +1338,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10099,
     "nombre": "Decant Al Noble Ameer",
     "marca": "Lattafa",
@@ -1365,9 +1391,35 @@
     "activo": true
   },
   {
+    "id": 10132,
+    "nombre": "Decant Victoria",
+    "marca": "Lattafa",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 8000,
+    "imagen": "img/dec/decant-lattafa-victoria.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10134,
+    "nombre": "Decant Ishq Al Shuyukh Gold",
+    "marca": "Lattafa",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 7500,
+    "imagen": "img/dec/decant-shuyukh.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10103,
     "nombre": "Decant Jean Lowe Immortal",
-    "marca": "Lattafa",
+    "marca": "Maison Alhambra",
     "genero": "Hombre",
     "ml": 5,
     "tipo": "Decant",
@@ -1380,7 +1432,7 @@
   {
     "id": 10104,
     "nombre": "Decant Jean Lowe Noir",
-    "marca": "Lattafa",
+    "marca": "Maison Alhambra",
     "genero": "Hombre",
     "ml": 5,
     "tipo": "Decant",
@@ -1390,10 +1442,10 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10105,
     "nombre": "Decant Jorge di Profumo",
-    "marca": "Lattafa",
+    "marca": "Maison Alhambra",
     "genero": "Hombre",
     "ml": 5,
     "tipo": "Decant",
@@ -1455,7 +1507,33 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
+    "id": 10135,
+    "nombre": "Decant Your Touch Extrait",
+    "marca": "Maison Alhambra",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 7000,
+    "imagen": "img/dec/decant-zimaya-tiramisu-coco.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10136,
+    "nombre": "Decant Your Touch Amber",
+    "marca": "Maison Alhambra",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 7000,
+    "imagen": "img/dec/decant-zimaya-tiramisu-coco.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10110,
     "nombre": "Decant Hawas for Him",
     "marca": "Rasasi",
@@ -1464,6 +1542,19 @@
     "tipo": "Decant",
     "precio": 9000,
     "imagen": "img/dec/decant-hawas-for-him.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10133,
+    "nombre": "Decant Hawas For Her",
+    "marca": "Rasasi",
+    "genero": "Mujer",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 7500,
+    "imagen": "img/dec/decant-hawas-for-her.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -1559,7 +1650,33 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
+    "id": 10130,
+    "nombre": "Decant Rayhaan Elixir",
+    "marca": "Rayhaan",
+    "genero": "Hombre",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 9500,
+    "imagen": "img/dec/decant-rayhaan-elixir.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10131,
+    "nombre": "Decant Rayhaan Corium",
+    "marca": "Rayhaan",
+    "genero": "Hombre",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 8500,
+    "imagen": "img/dec/decant-rayhaan-corium.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10118,
     "nombre": "Decant Rayhaan Tiger",
     "marca": "Rayhaan",
@@ -1611,7 +1728,7 @@
     "stock": true,
     "activo": true
   },
-    {
+  {
     "id": 10122,
     "nombre": "Decant Montale Arabians Tonka",
     "marca": "Montale",
@@ -1676,5 +1793,4 @@
     "stock": true,
     "activo": true
   }
-
 ]
