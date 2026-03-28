@@ -5,18 +5,18 @@ function imgSrc(path){
   return new URL(clean, document.baseURI).toString();
 }
 
-const grid           = document.getElementById("grid");
-const decantsGrid    = document.getElementById("decantsGrid");
-const promosGrid     = document.getElementById("promosGrid");
+const grid = document.getElementById("grid");
+const decantsGrid = document.getElementById("decantsGrid");
+const promosGrid = document.getElementById("promosGrid");
 const desodorantsGrid = document.getElementById("desodorantsGrid");
 
 const search = document.getElementById("search");
 const filter = document.getElementById("filter");
-const empty  = document.getElementById("empty");
+const empty = document.getElementById("empty");
 
-let perfumes     = [];
-let decants      = [];
-let promos       = [];
+let perfumes = [];
+let decants = [];
+let promos = [];
 let desodorantes = [];
 let favoritos = JSON.parse(localStorage.getItem('rulo_favs')) || [];
 
@@ -25,15 +25,8 @@ function moneyARS(n){
 }
 
 function waLink(perfume){
-  const precioTexto = perfume.stock === false
-    ? "Sin stock"
-    : `$${moneyARS(perfume.precio)}`;
-
-  const msg =
-`Hola!
-Vi en la web el *${perfume.nombre}* (${perfume.ml}ml - ${perfume.tipo}) por ${precioTexto}.
-¿Lo tenés disponible?`;
-
+  const precioTexto = perfume.stock === false ? "Sin stock" : `$${moneyARS(perfume.precio)}`;
+  const msg = `Hola! Vi en la web el *${perfume.nombre}* (${perfume.ml}ml) por ${precioTexto}. ¿Lo tenés disponible?`;
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
@@ -57,63 +50,59 @@ function updateFavUI() {
 function sendAllFavs() {
   const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
   const seleccionados = todos.filter(p => favoritos.includes(p.id));
-  
-  // 1. Creamos el texto de la lista de forma manual y limpia
   let listaItems = "";
   seleccionados.forEach(p => {
     listaItems += "- " + p.nombre + " (" + p.ml + "ml)%0A";
   });
-  
-  // 2. Armamos el mensaje final pegando las partes con %0A para los saltos de línea
   const saludo = "Hola Rulo! Me interesan estos productos de tu catalogo:";
   const despedida = "¿Los tenes disponibles?";
-  
   const mensajeFinal = saludo + "%0A%0A" + listaItems + "%0A" + despedida;
-
-  // 3. Abrimos el link (Sin usar encodeURIComponent otra vez para no duplicar códigos)
   window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + mensajeFinal, "_blank");
+}
+
+function openModalById(id) {
+    const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
+    const p = todos.find(x => x.id === id);
+    if (p) openModal(p);
 }
 
 function cardTemplate(p){
   const placeholder = imgSrc("img/placeholder.webp");
   const isFav = favoritos.includes(p.id);
+  const outOfStock = p.stock === false;
 
   return `
-    <article class="card">
+    <article class="card ${outOfStock ? 'out-of-stock' : ''}" onclick="openModalById(${p.id})">
       <div class="thumb">
-        ${p.stock === false ? '<div class="badge-out">Agotado</div>' : ''}
+        ${outOfStock ? '<div class="badge-out">Agotado</div>' : ''}
         <img src="${imgSrc(p.imagen)}" alt="${p.nombre}" onerror="this.onerror=null; this.src='${placeholder}'">
-        <button class="btn-cart-action ${isFav ? 'active' : ''}" onclick="toggleFav(${p.id}, event)">
-          ${isFav ? '🛒 Quitar' : '➕ Agregar'}
-        </button>
       </div>
 
       <div class="content">
         <div class="card__info">
-          <div class="row">
-            <div>
-              <div class="name">${p.nombre}</div>
-              <div class="meta">
-                <span class="badge">${p.marca  || "-"}</span>
-                <span class="badge">${p.genero || "-"}</span>
-                <span class="badge">${p.tipo   || "-"}</span>
-                <span class="badge">${p.ml     || "-"}ml</span>
-              </div>
-            </div>
+          <div class="name">${p.nombre}</div>
+          <div class="meta">
+            <span class="badge">${p.marca || "-"}</span>
+            <span class="badge">${p.genero || "-"}</span>
+            <span class="badge">${p.ml || "-"}ml</span>
           </div>
-
           <div class="price">
-            ${p.stock === false ? "Sin stock" : "$" + moneyARS(p.precio)}
+            ${outOfStock ? "Sin stock" : "$" + moneyARS(p.precio)}
           </div>
         </div>
 
         <div class="card__actions">
-          <button class="btn" data-open="${p.id}"
-            style="background:rgba(212,162,76,.12);border:1px solid rgba(212,162,76,.30);color:var(--text);">
-            Ver detalle
+          <button class="btn btn-add ${isFav ? 'active' : ''}" 
+                  onclick="toggleFav(${p.id}, event); event.stopPropagation();"
+                  style="background:${isFav ? '#25d366' : 'rgba(212,162,76,.12)'}; 
+                         border:1px solid ${isFav ? '#25d366' : 'rgba(212,162,76,.30)'}; 
+                         color:${isFav ? 'white' : 'var(--text)'};
+                         display: ${outOfStock ? 'none' : 'flex'};">
+            ${isFav ? '🛒 Quitar de la lista' : '➕ Añadir al carrito'}
           </button>
 
-          <a class="btn btn--wa" href="${waLink(p)}" target="_blank" rel="noopener">
+          <a class="btn btn--wa" href="${waLink(p)}" target="_blank" rel="noopener"
+             onclick="event.stopPropagation();">
             Consultar por WhatsApp
           </a>
         </div>
@@ -126,21 +115,15 @@ function categoryTemplate(c){
   return `
     <article class="category-card">
       <a href="${c.link}">
-        <div class="thumb">
-          <img src="${c.imagen}" alt="${c.nombre}"
-               onerror="this.onerror=null;this.src='img/placeholder.webp'">
-        </div>
+        <div class="thumb"><img src="${c.imagen}" alt="${c.nombre}" onerror="this.onerror=null;this.src='img/placeholder.webp'"></div>
         <h2>${c.nombre}</h2>
       </a>
-    </article>
-  `;
+    </article>`;
 }
 
-// FIX: categorías hardcodeadas eliminadas; ahora se cargan desde secciones.json en init()
 function renderCategories(lista){
   const container = document.querySelector(".home-categories");
-  if (!container) return;
-  container.innerHTML = lista.map(categoryTemplate).join("");
+  if (container) container.innerHTML = lista.map(categoryTemplate).join("");
 }
 
 function renderPerfumes(list){
@@ -149,250 +132,209 @@ function renderPerfumes(list){
 }
 
 function renderDecants(list){
-  if (!decantsGrid) return;
-  const activos = list.filter(p => p.activo !== false);
-  decantsGrid.innerHTML = activos.map(cardTemplate).join("");
+  if (decantsGrid) decantsGrid.innerHTML = list.filter(p => p.activo !== false).map(cardTemplate).join("");
 }
 
 function renderPromos(list){
-  // FIX: si no hay promos, ocultamos toda la sección en vez de dejarla vacía
   const section = document.getElementById("promos");
-  if (!promosGrid) return;
-
   const activos = list.filter(p => p.activo !== false);
-
-  if (activos.length === 0) {
-    if (section) section.style.display = "none";
-    return;
-  }
-
-  if (section) section.style.display = "";
-  promosGrid.innerHTML = activos.map(cardTemplate).join("");
+  if (section) section.style.display = activos.length === 0 ? "none" : "";
+  if (promosGrid) promosGrid.innerHTML = activos.map(cardTemplate).join("");
 }
 
 function renderDesodorantes(list){
-  if (!desodorantsGrid) return;
-  const activos = list.filter(p => p.activo !== false);
-  desodorantsGrid.innerHTML = activos.map(cardTemplate).join("");
+  if (desodorantsGrid) desodorantsGrid.innerHTML = list.filter(p => p.activo !== false).map(cardTemplate).join("");
 }
 
-function render(list){
-  renderPerfumes(list);
-}
-
-// ===== MODAL =====
-const modal      = document.getElementById("modal");
-const modalImg   = document.getElementById("modalImg");
+// MODAL
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
 const modalTitle = document.getElementById("modalTitle");
 const modalPrice = document.getElementById("modalPrice");
 const modalBadges = document.getElementById("modalBadges");
-const modalDesc  = document.getElementById("modalDesc");
-const modalDur   = document.getElementById("modalDur");
+const modalDesc = document.getElementById("modalDesc");
+const modalDur = document.getElementById("modalDur");
 const modalEstela = document.getElementById("modalEstela");
-const modalWa    = document.getElementById("modalWa");
+const modalWa = document.getElementById("modalWa");
 
 function openModal(p){
   modal.classList.remove("hidden");
-  modal.setAttribute("aria-hidden", "false");
   document.body.style.overflow = "hidden";
-
-  const PLACEHOLDER = imgSrc("img/placeholder.webp");
-
-  modalImg.onerror = null;
   modalImg.src = imgSrc(p.imagen);
-  modalImg.alt = p.nombre;
-  modalImg.onerror = function(){
-    this.onerror = null;
-    this.src = PLACEHOLDER;
-  };
-
   modalTitle.textContent = p.nombre;
-  modalPrice.textContent = p.stock === false
-    ? "Sin stock"
-    : `$${moneyARS(p.precio)}`;
-
-  modalBadges.innerHTML = `
-    <span class="badge">${p.marca  || "-"}</span>
-    <span class="badge">${p.genero || "-"}</span>
-    <span class="badge">${p.tipo   || "-"}</span>
-    <span class="badge">${p.ml     || "-"}ml</span>
-  `;
-
-  modalDesc.textContent = p.descripcion || "Consultá disponibilidad y envíos por WhatsApp.";
-
-  document.getElementById("notas-salida").textContent   = p.notas_salida   || "-";
-  document.getElementById("notas-corazon").textContent  = p.notas_corazon  || "-";
-  document.getElementById("notas-fondo").textContent    = p.notas_fondo    || "-";
-
-  modalDur.textContent    = p.duracion || "-";
-  modalEstela.textContent = p.estela   || "-";
-
+  modalPrice.textContent = p.stock === false ? "Sin stock" : `$${moneyARS(p.precio)}`;
+  modalBadges.innerHTML = `<span class="badge">${p.marca || "-"}</span><span class="badge">${p.genero || "-"}</span><span class="badge">${p.ml || "-"}ml</span>`;
+  modalDesc.textContent = p.descripcion || "Consultá disponibilidad por WhatsApp.";
+  document.getElementById("notas-salida").textContent = p.notas_salida || "-";
+  document.getElementById("notas-corazon").textContent = p.notas_corazon || "-";
+  document.getElementById("notas-fondo").textContent = p.notas_fondo || "-";
+  modalDur.textContent = p.duracion || "-";
+  modalEstela.textContent = p.estela || "-";
   modalWa.href = waLink(p);
 }
 
 function closeModal(){
   modal.classList.add("hidden");
-  modal.setAttribute("aria-hidden", "true");
   document.body.style.overflow = "";
 }
 
 document.addEventListener("click", (e) => {
-  if (e.target && (e.target.id === "modalClose" || e.target.closest("#modalClose"))) {
-    closeModal();
-    return;
-  }
-
-  const isBackdrop = e.target?.classList?.contains("modal__backdrop");
-  if (isBackdrop) {
-    closeModal();
-    return;
-  }
-
-  const btn = e.target.closest("[data-open]");
-  if (!btn) return;
-
-  const id = Number(btn.dataset.open);
-  const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
-  const p = todos.find(x => x.id === id);
-  if (p) openModal(p);
+  if (e.target.id === "modalClose" || e.target.closest("#modalClose") || e.target.classList.contains("modal__backdrop")) closeModal();
 });
 
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && !modal.classList.contains("hidden")) closeModal();
-});
-
-// ===== FILTROS =====
 function applyFilters(){
-  const q = (search?.value || "").trim().toLowerCase();
+  const q = (search?.value || "").toLowerCase();
   const f = (filter?.value || "all");
+  
+  // FILTRO CLAVE: Solo perfumes que NO tengan activo: false
+  let list = perfumes.filter(p => p.activo !== false);
 
-  let list = perfumes.filter(p => {
-    if (p.activo === false) return false;
-    const nombre = (p.nombre || "").toLowerCase();
-    const marca  = (p.marca  || "").toLowerCase();
-    return nombre.includes(q) || marca.includes(q);
-  });
+  // Filtro de búsqueda por nombre/marca
+  list = list.filter(p => (p.nombre || "").toLowerCase().includes(q) || (p.marca || "").toLowerCase().includes(q));
 
-  if (f === "hombre" || f === "mujer" || f === "unisex") {
+  // Filtro de género
+  if (["hombre","mujer","unisex"].includes(f)) {
     list = list.filter(p => (p.genero || "").toLowerCase() === f);
   }
 
+  // Orden de precio
   if (f === "asc" || f === "desc") {
-    list.sort((a, b) => {
-      const pa = Number(String(a.precio).replace(/\D/g, "")) || 0;
-      const pb = Number(String(b.precio).replace(/\D/g, "")) || 0;
-      return f === "asc" ? pa - pb : pb - pa;
-    });
+    list.sort((a,b) => f === "asc" ? a.precio - b.precio : b.precio - a.precio);
   }
 
   renderPerfumes(list); 
   renderDecants(decants); 
-  renderPromos(promos);
+  renderPromos(promos); 
   renderDesodorantes(desodorantes);
 }
 
-// ===== INIT =====
 async function init(){
-  document.getElementById("year").textContent = new Date().getFullYear();
-
-  // Loading state mientras se cargan los datos
-  grid.innerHTML = '<p style="color:var(--muted);padding:20px;grid-column:1/-1">Cargando catálogo...</p>';
-
   try {
-    // Perfumes (obligatorio)
-    const resPerfumes = await fetch("data/perfumes.json");
-    if (!resPerfumes.ok) throw new Error("No se pudo cargar perfumes.json");
-    perfumes = await resPerfumes.json();
-
-    // FIX: Categorías cargadas desde secciones.json en vez del array hardcodeado
-    try {
-      const resSecciones = await fetch("data/secciones.json");
-      if (resSecciones.ok) {
-        const secciones = await resSecciones.json();
-        renderCategories(secciones);
-      } else {
-        // Fallback por si secciones.json no existe
-        renderCategories([
-          { nombre: "Perfumes",      imagen: "img/categorias/perfumes.webp",     link: "#perfumes"      },
-          { nombre: "Decants",       imagen: "img/categorias/decants.webp",      link: "#decants"       },
-          { nombre: "Promos",        imagen: "img/categorias/promos.webp",       link: "#promos"        },
-          { nombre: "Desodorantes",  imagen: "img/categorias/desodorantes.webp", link: "#desodorantes"  },
-        ]);
-      }
-    } catch {
-      console.log("secciones.json no cargó, usando categorías por defecto");
-    }
-
-    // Decants (opcional)
-    try {
-      const resDecants = await fetch("data/decants.json");
-      if (resDecants.ok) decants = await resDecants.json();
-    } catch { console.log("decants.json no cargó"); }
-
-    // FIX: promos.json puede estar vacío o no existir; ambos casos están manejados
-    try {
-      const resPromos = await fetch("data/promos.json");
-      if (resPromos.ok) {
-        const text = await resPromos.text();
-        promos = text.trim() ? JSON.parse(text) : [];
-      }
-    } catch { console.log("promos.json no cargó"); }
-
-    // Desodorantes (opcional)
-    try {
-      const resDesodorantes = await fetch("data/desodorantes.json");
-      if (resDesodorantes.ok) desodorantes = await resDesodorantes.json();
-    } catch { console.log("desodorantes.json no cargó"); }
-
-    // Render inicial
-    renderPerfumes(perfumes.filter(p => p.activo !== false));
-    renderDecants(decants);
-    renderPromos(promos);
-    renderDesodorantes(desodorantes);
-
-    if (search) search.addEventListener("input", applyFilters);
-    if (filter) filter.addEventListener("change", applyFilters);
-
-  } catch (error) {
-    console.error("Error cargando catálogo:", error);
-    empty.classList.remove("hidden");
-    empty.innerHTML = "<p>No se pudo cargar el catálogo. Intentá recargar la página.</p>";
-    grid.innerHTML = "";
-  }
+    const resP = await fetch("data/perfumes.json"); perfumes = await resP.json();
+    try { const resS = await fetch("data/secciones.json"); if(resS.ok) renderCategories(await resS.json()); } catch(e){}
+    try { const resD = await fetch("data/decants.json"); if(resD.ok) decants = await resD.json(); } catch(e){}
+    try { const resPr = await fetch("data/promos.json"); if(resPr.ok) promos = await resPr.json(); } catch(e){}
+    try { const resDe = await fetch("data/desodorantes.json"); if(resDe.ok) desodorantes = await resDe.json(); } catch(e){}
+    applyFilters();
+  } catch (error) { console.error(error); }
 }
 
-init();
-updateFavUI();
-
-// FIX: Eliminado el `closeModal()` suelto que se ejecutaba al cargar la página
-
-// ===== BOTÓN IR ARRIBA =====
-// FIX: Simplificado para escuchar solo window.scroll, sin riesgo de capturar el scroll del modal
-document.addEventListener("DOMContentLoaded", () => {
-  const boton = document.getElementById("topBtn");
-  if (!boton) return;
-
-  window.addEventListener("scroll", () => {
-    boton.style.display = window.scrollY > 300 ? "block" : "none";
-  });
-
-  boton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-});
-
-// ===== MENÚ MOBILE =====
+// --- ACTIVAR MENÚ DE CATEGORÍAS (HEADER) ---
 const menuToggle = document.getElementById("menuToggle");
 const mobileMenu = document.getElementById("mobileMenu");
 
 if (menuToggle && mobileMenu) {
-  menuToggle.addEventListener("click", () => {
+  menuToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
     mobileMenu.classList.toggle("is-open");
   });
 
+  // Cerrar el menú si clickean un link
   mobileMenu.querySelectorAll("a").forEach(link => {
     link.addEventListener("click", () => {
       mobileMenu.classList.remove("is-open");
     });
   });
 }
+
+// Cerrar menú si clickean fuera
+document.addEventListener("click", (e) => {
+  if (mobileMenu && !mobileMenu.contains(e.target) && e.target !== menuToggle) {
+    mobileMenu.classList.remove("is-open");
+  }
+});
+
+// --- VINCULAR BUSCADOR Y FILTROS ---
+if (search) search.addEventListener("input", applyFilters);
+if (filter) filter.addEventListener("change", applyFilters);
+
+
+// ===== BOTÓN VOLVER ARRIBA (Versión Directa) =====
+const topBtn = document.getElementById("topBtn");
+
+if (topBtn) {
+  // Forzamos que empiece oculto por JS
+  topBtn.style.display = "none";
+
+  window.addEventListener("scroll", () => {
+    // Si bajamos más de 300px, lo mostramos
+    if (window.scrollY > 300) {
+      topBtn.style.display = "flex"; // "flex" para que el contenido (↑) se centre
+    } else {
+      topBtn.style.display = "none";
+    }
+  });
+
+  topBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+// Abrir y cerrar el carrito
+function toggleCart() {
+  const drawer = document.getElementById("cartDrawer");
+  if (!drawer) return; // Seguridad por si no cargó el HTML
+  
+  drawer.classList.toggle("is-open");
+  
+  // Si lo abrimos, dibujamos los items
+  if (drawer.classList.contains("is-open")) {
+    renderCartItems();
+  }
+}
+
+// Dibujar los productos dentro del carrito lateral
+function renderCartItems() {
+  const container = document.getElementById("cartItems");
+  const totalSumEl = document.getElementById("cartTotalSum");
+  if (!container) return;
+
+  const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
+  const seleccionados = todos.filter(p => favoritos.includes(p.id));
+  
+  let total = 0;
+  
+  if (seleccionados.length === 0) {
+    container.innerHTML = '<p style="text-align:center; color:var(--muted); padding:20px;">Tu lista está vacía...</p>';
+    if(totalSumEl) totalSumEl.innerText = "$0";
+    return;
+  }
+
+  container.innerHTML = seleccionados.map(p => {
+    total += Number(p.precio) || 0;
+    return `
+      <div class="cart-item" style="display:flex; gap:10px; margin-bottom:15px; align-items:center; background:rgba(255,255,255,0.05); padding:10px; border-radius:12px;">
+        <img src="${imgSrc(p.imagen)}" style="width:50px; height:50px; object-fit:contain; background:#fff; border-radius:8px;">
+        <div style="flex:1;">
+          <div style="font-weight:bold; font-size:13px;">${p.nombre}</div>
+          <div style="color:var(--gold); font-weight:bold;">$${moneyARS(p.precio)}</div>
+        </div>
+        <button onclick="toggleFav(${p.id}, event)" style="background:none; border:none; color:#ff4444; font-size:18px; cursor:pointer;">✕</button>
+      </div>
+    `;
+  }).join("");
+      
+  if(totalSumEl) totalSumEl.innerText = `$${moneyARS(total)}`;
+}
+
+// Actualizamos el updateFavUI para que use el nuevo botón
+function updateFavUI() {
+    const countEl = document.getElementById('favCount');
+    const floatBtn = document.getElementById('favButton');
+    
+    if(countEl) countEl.innerText = favoritos.length;
+    
+    // Si hay algo en la lista, mostramos el botón flotante
+    if(floatBtn) {
+      floatBtn.style.display = favoritos.length > 0 ? 'flex' : 'none';
+    }
+    
+    // Si el carrito está abierto, lo refrescamos
+    const drawer = document.getElementById("cartDrawer");
+    if (drawer && drawer.classList.contains("is-open")) {
+      renderCartItems();
+    }
+}
+
+init();
+updateFavUI();

@@ -429,7 +429,7 @@
   "notas_salida": "Pomelo, limon, menta y pimienta rosa",
   "notas_corazon": "Jengibre, melón, jazmín y nuez moscada",
   "notas_fondo": "Notas amaderadas, ambar, cedro y pachulí",
-  "stock": true,
+  "stock": false,
   "activo": true
 },
 {
