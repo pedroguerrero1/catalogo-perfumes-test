@@ -159,6 +159,7 @@ const modalWa = document.getElementById("modalWa");
 
 function openModal(p){
   modal.classList.remove("hidden");
+  document.body.classList.add("modal-open");
   document.body.style.overflow = "hidden";
   modalImg.src = imgSrc(p.imagen);
   modalTitle.textContent = p.nombre;
@@ -175,6 +176,7 @@ function openModal(p){
 
 function closeModal(){
   modal.classList.add("hidden");
+  document.body.classList.remove("modal-open");
   document.body.style.overflow = "";
 }
 
