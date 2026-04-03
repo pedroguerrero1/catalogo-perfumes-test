@@ -30,34 +30,61 @@ function waLink(perfume){
   return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;
 }
 
-function toggleFav(id, event) {
-    if(event) event.stopPropagation(); 
-    const index = favoritos.indexOf(id);
-    if (index > -1) { favoritos.splice(index, 1); } 
-    else { favoritos.push(id); }
-    localStorage.setItem('rulo_favs', JSON.stringify(favoritos));
-    updateFavUI();
-    applyFilters(); 
+// ===== TOAST DE CONFIRMACIÓN =====
+function showToast(nombre, agregado) {
+  // Remover toast anterior si existe
+  const old = document.getElementById("cartToast");
+  if (old) old.remove();
+
+  const toast = document.createElement("div");
+  toast.id = "cartToast";
+  toast.innerHTML = agregado
+    ? `<span>✅</span> <strong>${nombre}</strong> agregado al pedido`
+    : `<span>🗑️</span> <strong>${nombre}</strong> quitado del pedido`;
+  document.body.appendChild(toast);
+
+  // Forzar reflow para que la transición arranque
+  toast.offsetHeight;
+  toast.classList.add("toast--visible");
+
+  setTimeout(() => {
+    toast.classList.remove("toast--visible");
+    setTimeout(() => toast.remove(), 400);
+  }, 2200);
 }
 
-function updateFavUI() {
-    const countEl = document.getElementById('favCount');
-    const floatBtn = document.getElementById('favButton');
-    if(countEl) countEl.innerText = favoritos.length;
-    if(floatBtn) floatBtn.style.display = favoritos.length > 0 ? 'flex' : 'none';
+function toggleFav(id, event) {
+    if(event) event.stopPropagation();
+    const index = favoritos.indexOf(id);
+    const agregado = index === -1;
+
+    if (!agregado) { favoritos.splice(index, 1); }
+    else { favoritos.push(id); }
+
+    localStorage.setItem('rulo_favs', JSON.stringify(favoritos));
+
+    // Buscar nombre del producto para el toast
+    const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
+    const p = todos.find(x => x.id === id);
+    if (p) showToast(p.nombre, agregado);
+
+    updateFavUI();
+    applyFilters();
 }
+
+// updateFavUI unificada más abajo (ver función única)
 
 function sendAllFavs() {
   const todos = [...perfumes, ...decants, ...promos, ...desodorantes];
   const seleccionados = todos.filter(p => favoritos.includes(p.id));
+  
   let listaItems = "";
   seleccionados.forEach(p => {
-    listaItems += "- " + p.nombre + " (" + p.ml + "ml)%0A";
+    listaItems += `- ${p.nombre} (${p.ml}ml)\n`;
   });
-  const saludo = "Hola Rulo! Me interesan estos productos de tu catalogo:";
-  const despedida = "¿Los tenes disponibles?";
-  const mensajeFinal = saludo + "%0A%0A" + listaItems + "%0A" + despedida;
-  window.open("https://wa.me/" + WHATSAPP_NUMBER + "?text=" + mensajeFinal, "_blank");
+
+  const mensaje = `Hola Rulo! Me interesan estos productos de tu catálogo:\n\n${listaItems}\n¿Los tenés disponibles?`;
+  window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`, "_blank");
 }
 
 function openModalById(id) {
@@ -187,36 +214,58 @@ document.addEventListener("click", (e) => {
 function applyFilters(){
   const q = (search?.value || "").toLowerCase();
   const f = (filter?.value || "all");
-  
-  // FILTRO CLAVE: Solo perfumes que NO tengan activo: false
-  let list = perfumes.filter(p => p.activo !== false);
 
-  // Filtro de búsqueda por nombre/marca
-  list = list.filter(p => (p.nombre || "").toLowerCase().includes(q) || (p.marca || "").toLowerCase().includes(q));
+  const matchesQuery = (p) =>
+    (p.nombre || "").toLowerCase().includes(q) ||
+    (p.marca || "").toLowerCase().includes(q);
 
-  // Filtro de género
-  if (["hombre","mujer","unisex"].includes(f)) {
-    list = list.filter(p => (p.genero || "").toLowerCase() === f);
+  const matchesGender = (p) =>
+    !["hombre","mujer","unisex"].includes(f) || (p.genero || "").toLowerCase() === f;
+
+  const sortFn = f === "asc" ? (a,b) => a.precio - b.precio
+               : f === "desc" ? (a,b) => b.precio - a.precio
+               : null;
+
+  // Perfumes (con filtro de género y orden)
+  let listP = perfumes.filter(p => p.activo !== false && matchesQuery(p) && matchesGender(p));
+  if (sortFn) listP.sort(sortFn);
+  renderPerfumes(listP);
+
+  // Decants, promos y desodorantes: solo filtro de texto (sin género ni precio)
+  const listD = decants.filter(p => p.activo !== false && matchesQuery(p));
+  const listPr = promos.filter(p => p.activo !== false && matchesQuery(p));
+  const listDe = desodorantes.filter(p => p.activo !== false && matchesQuery(p));
+
+  if (decantsGrid) {
+    decantsGrid.innerHTML = listD.map(cardTemplate).join("");
+    const sec = document.getElementById("decants");
+    if (sec) sec.style.display = listD.length === 0 && q ? "none" : "";
   }
 
-  // Orden de precio
-  if (f === "asc" || f === "desc") {
-    list.sort((a,b) => f === "asc" ? a.precio - b.precio : b.precio - a.precio);
+  const promosSec = document.getElementById("promos");
+  if (promosGrid) {
+    promosGrid.innerHTML = listPr.map(cardTemplate).join("");
+    if (promosSec) promosSec.style.display = listPr.length === 0 ? "none" : "";
   }
 
-  renderPerfumes(list); 
-  renderDecants(decants); 
-  renderPromos(promos); 
-  renderDesodorantes(desodorantes);
+  if (desodorantsGrid) {
+    desodorantsGrid.innerHTML = listDe.map(cardTemplate).join("");
+    const sec = document.getElementById("desodorantes");
+    if (sec) sec.style.display = listDe.length === 0 && q ? "none" : "";
+  }
+
+  // Mensaje vacío global si no hay nada en ninguna sección
+  const totalResultados = listP.length + listD.length + listPr.length + listDe.length;
+  empty.classList.toggle("hidden", totalResultados !== 0 || !q);
 }
 
 async function init(){
   try {
     const resP = await fetch("data/perfumes.json"); perfumes = await resP.json();
     try { const resS = await fetch("data/secciones.json"); if(resS.ok) renderCategories(await resS.json()); } catch(e){}
-    try { const resD = await fetch("data/decants.json"); if(resD.ok) decants = await resD.json(); } catch(e){}
-    try { const resPr = await fetch("data/promos.json"); if(resPr.ok) promos = await resPr.json(); } catch(e){}
-    try { const resDe = await fetch("data/desodorantes.json"); if(resDe.ok) desodorantes = await resDe.json(); } catch(e){}
+    try { const resD = await fetch("data/decants.json"); if(resD.ok) { decants = await resD.json(); renderDecants(decants); } } catch(e){}
+    try { const resPr = await fetch("data/promos.json"); if(resPr.ok) { promos = await resPr.json(); renderPromos(promos); } } catch(e){}
+    try { const resDe = await fetch("data/desodorantes.json"); if(resDe.ok) { desodorantes = await resDe.json(); renderDesodorantes(desodorantes); } } catch(e){}
     applyFilters();
   } catch (error) { console.error(error); }
 }
