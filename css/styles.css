@@ -534,12 +534,13 @@ body{
 
 .meta{
   margin-top: 6px;
-  min-height: 30px;
+  min-height: 58px; /* Espacio fijo para hasta 2 filas de badges */
   color: var(--muted);
   font-size: 12px;
   display:flex;
   gap: 8px;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .badge{
