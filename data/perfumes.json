@@ -812,6 +812,24 @@
   "activo": true
 },
 {
+  "id": 413,
+  "nombre": "Vulcan Baie",
+  "marca": "French Avenue",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 77000,
+  "imagen": "img/french-avenue-vulcan-baie.webp",
+
+  "descripcion": "Fresco, frutal y muy elegante. Ideal para diario, oficina y climas cálidos, con un toque moderno.",
+  
+  "notas_salida": "Grosellas negras, zarzamora y bergamota",
+  "notas_corazon": "Frambuesa, vodka y albahaca",
+  "notas_fondo": "Fresa, almizcle, durazno y ambar",
+  "stock": true,
+  "activo": true
+},
+{
   "id": 407,
   "nombre": "Veneno Scarlet",
   "marca": "French Avenue",
@@ -899,6 +917,24 @@
   "notas_corazon": "Vainilla Bourbon y elemi.",
   "notas_fondo": "Praliné, ambroxan, madera de gaiac y almizcle.",
   "stock": false,
+  "activo": true
+},
+{
+  "id": 559,
+  "nombre": "Angham Second Song",
+  "marca": "Lattafa",
+  "genero": "mujer",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 64000,
+  "imagen": "img/lattafa-angham-second-song.webp",
+
+  "descripcion": "Envolvente, frutal y sumamente sofisticado. Ideal para noche, ocasiones especiales y clima fresco.",
+
+  "notas_salida": "Flor del peral y bergamota",
+  "notas_corazon": "Peonía, flor de azahar del naranjo y praliné",
+  "notas_fondo": "Vainilla, almizcle, haba tonka y ambroxan",
+  "stock": true,
   "activo": true
 },
 {
@@ -2296,12 +2332,30 @@
   "precio": 57000,
   "imagen": "img/rasasi-hawas-for-her.webp",
 
-  "descripcion": "Vibrante, jugoso y muy elegante. Ideal para diario, salidas y clima cálido, con un toque moderno y seductor..",
+  "descripcion": "Vibrante, jugoso y muy elegante. Ideal para diario, salidas y clima cálido, con un toque moderno y seductor.",
 
   "notas_salida": " Granada, manzana y pomelo",
   "notas_corazon": "Iris, jazmín sambac y cítricos",
   "notas_fondo": "Praliné, pachulí y vetiver",
-  "stock": false,
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 708,
+  "nombre": "Hawas London",
+  "marca": "Rasasi",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 90000,
+  "imagen": "img/rasasi-hawas-london.webp",
+
+  "descripcion": "Radiante, floral y muy elegante. Ideal para diario, oficina y clima cálido, con un toque moderno y seductor de flores blancas.",
+
+  "notas_salida": "Pimienta rosa, azafrán y pera",
+  "notas_corazon": "Rosa, Incienso y flores blancas",
+  "notas_fondo": "Maderas rubias, almizcle, ámbar y vainilla",
+  "stock": true,
   "activo": true
 },
 {

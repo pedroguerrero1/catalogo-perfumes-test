@@ -559,6 +559,19 @@
     "activo": true
   },
   {
+    "id": 10140,
+    "nombre": "Decant Vulcan Baie",
+    "marca": "French Avenue",
+    "genero": "Mujer",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 10000,
+    "imagen": "img/dec/decant-vulcan-baie.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10041,
     "nombre": "Decant Vulcan Black Friday",
     "marca": "French Avenue",
@@ -632,6 +645,19 @@
     "tipo": "Decant",
     "precio": 0,
     "imagen": "img/dec/decant-spectre-ghost.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10141,
+    "nombre": "Decant Angham Second Song",
+    "marca": "Lattafa",
+    "genero": "Mujer",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 8000,
+    "imagen": "img/dec/decant-angham-second-song.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -1515,7 +1541,7 @@
     "ml": 5,
     "tipo": "Decant",
     "precio": 7000,
-    "imagen": "img/dec/decant-zimaya-tiramisu-coco.webp",
+    "imagen": "img/dec/decant-your-touch-extrait.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -1528,7 +1554,7 @@
     "ml": 5,
     "tipo": "Decant",
     "precio": 7000,
-    "imagen": "img/dec/decant-zimaya-tiramisu-coco.webp",
+    "imagen": "img/dec/decant-your-touch-amber.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -1646,6 +1672,19 @@
     "tipo": "Decant",
     "precio": 12000,
     "imagen": "img/dec/decant-hawas-kobra.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10139,
+    "nombre": "Decant Hawas London",
+    "marca": "Rasasi",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 12000,
+    "imagen": "img/dec/decant-hawas-london.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
