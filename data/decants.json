@@ -39,6 +39,32 @@
     "activo": true
   },
   {
+    "id": 10142,
+    "nombre": "Decant Scandal Pour Homme",
+    "marca": "Jean Paul Gaultier",
+    "genero": "Hombre",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 19000,
+    "imagen": "img/dec/decant-scandal-pour.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+    {
+    "id": 10143,
+    "nombre": "Decant Azzaro Wanted Men",
+    "marca": "Azzaro",
+    "genero": "Hombre",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 14000,
+    "imagen": "img/dec/decant-azzaro-wanted-men.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10122,
     "nombre": "Decant Montale Arabians Tonka",
     "marca": "Montale",
@@ -437,6 +463,19 @@
     "tipo": "Decant",
     "precio": 8000,
     "imagen": "img/dec/decant-odyssey-spectra.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+    {
+    "id": 10144,
+    "nombre": "Decant Odyssey Artisto",
+    "marca": "Armaf",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 11000,
+    "imagen": "img/dec/decant-odyssey-artisto.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
@@ -1477,6 +1516,19 @@
     "tipo": "Decant",
     "precio": 8000,
     "imagen": "img/dec/decant-jean-lowe-noir.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
+    "id": 10145,
+    "nombre": "Decant Jean Lowe Azure",
+    "marca": "Maison Alhambra",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 8500,
+    "imagen": "img/dec/decant-jean-lowe-azure.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true

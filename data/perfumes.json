@@ -1,5 +1,5 @@
 [
- {  
+{  
   "id": 100,
   "nombre": "Xerjoff Erba Pura",
   "marca": "Xerjoff",
@@ -16,8 +16,8 @@
   "notas_fondo": "Almizcle blanco, vainilla de Madagascar y ámbar",
   "stock": true,
   "activo": true
- },
- {
+},
+{
   "id": 851,
   "nombre": "Valentino Uomo Born in Roma extradose",
   "marca": "Valentino",
@@ -34,8 +34,8 @@
   "notas_fondo": "Notas amaderadas",
   "stock": true,
   "activo": true
- },
- {
+},
+{
   "id": 852,
   "nombre": "Stronger With You Intensely",
   "marca": "Emmporio Armani",
@@ -52,8 +52,26 @@
   "notas_fondo": "Vainilla, ámbar, haba tonka y gamuza",
   "stock": true,
   "activo": true
- },
- {
+},
+{
+  "id": 853,
+  "nombre": "Scandal Pour Homme Le Parfum",
+  "marca": "Jean Paul Gaultier",
+  "genero": "Hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 190000,
+  "imagen": "img/scandal-pour-homme-le-parfum.webp",
+
+  "descripcion": "Intenso, dulce y muy elegante. Ideal para noche, salidas y clima frío, con un corazón jugoso de geranio y base cálida de haba tonka y sándalo que aporta un toque moderno y seductor.",
+
+  "notas_salida": "Geranio",
+  "notas_corazon": "Haba tonka",
+  "notas_fondo": "Sándalo",
+  "stock": true,
+  "activo": true
+},
+{
   "id": 850,
   "nombre": "Montale Arabians Tonka",
   "marca": "Montale",
@@ -71,7 +89,25 @@
   "stock": true,
   "activo": true
 },
- {
+{
+  "id": 852,
+  "nombre": "Azzaro Wanted Men EDT ",
+  "marca": "Azzaro",
+  "genero": "Hombre",
+  "ml": 100,
+  "tipo": "EDT",
+  "precio": 115000,
+  "imagen": "img/azzaro-wanted-men.webp",
+
+  "descripcion": "Energético, especiado y muy elegante. Ideal para diario, salidas y climas templados, con un corazón jugoso de jengibre y base cálida de haba tonka que aporta un toque moderno.",
+
+  "notas_salida": "Limon, jengibre y lavanda",
+  "notas_corazon": "Cardamomo, enebro y manzana",
+  "notas_fondo": "Haba tonka, vetiver y amberwood",
+  "stock": true,
+  "activo": true
+},
+{
   "id": 101,
   "nombre": "9PM Night Out",
   "marca": "Afnan",
@@ -415,7 +451,7 @@
   "activo": true
 },
 {
-  "id": 217,
+  "id": 218,
   "nombre": "Club de Nuit Maleka",
   "marca": "Armaf",
   "genero": "mujer",
@@ -433,7 +469,7 @@
   "activo": true
 },
 {
-  "id": 218,
+  "id": 219,
   "nombre": "Club de Blue Iconic",
   "marca": "Armaf",
   "genero": "unisex",
@@ -628,6 +664,24 @@
   "notas_salida": "Canela, manzana y bergamota.",
   "notas_corazon": "Canela, lavanda, flor de azahar del naranjo y lirio de los valles",
   "notas_fondo": "Vainilla, tabaco, haba tonka, ámbar y pachulí.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 217,
+  "nombre": "Odyssey Artisto",
+  "marca": "Armaf",
+  "genero": "unisex",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 80000,
+  "imagen": "img/armaf-odyssey-artisto.webp",
+
+  "descripcion": "Fresco, aromático y muy elegante. Ideal para diario, oficina y climas cálidos",
+
+  "notas_salida": "Bergamota, notas de frutos secos y salvia.",
+  "notas_corazon": "Coco, frutas tropicales y canela.",
+  "notas_fondo": "ámbar, vainilla y haba tonka.",
   "stock": true,
   "activo": true
 },
@@ -2067,6 +2121,24 @@
   "notas_salida": "Oud (madera de agar), incienso.",
   "notas_corazon": "Rosa, frambuesa, azafrán y abedul.",
   "notas_fondo": "Ámbar, benjuí y geranio.",
+  "stock": true,
+  "activo": true
+},
+{
+  "id": 609,
+  "nombre": "Jean Lowe Azure",
+  "marca": "Maison Alhambra",
+  "genero": "hombre",
+  "ml": 100,
+  "tipo": "EDP",
+  "precio": 73000,
+  "imagen": "img/maison-alhambra-jean-lowe-azure.webp",
+
+  "descripcion": "Refrescante, ambarado y muy elegante. Ideal para diario, oficina y climas cálidos, algo que se destaca por un aroma muy limpio.",
+
+  "notas_salida": "Mandarina y bergamota",
+  "notas_corazon": "Naranja",
+  "notas_fondo": "Jengibre y ámbar gris",
   "stock": true,
   "activo": true
 },
