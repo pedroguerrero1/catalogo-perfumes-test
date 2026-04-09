@@ -213,7 +213,7 @@
   "notas_salida": "Bergamota, mandarina y notas verdes",
   "notas_corazon": "Melón, piña y notas acuáticas",
   "notas_fondo": "Almizcle blanco, galbano, vainilla y maderas suaves",
-  "stock": false,
+  "stock": true,
   "activo": true
 },
 {
@@ -628,7 +628,7 @@
   "notas_salida": "Frutas oscuras y especias",
   "notas_corazon": "Rosa y notas florales cálidas",
   "notas_fondo": "Vainilla, ámbar, almizcle y maderas profundas",
-  "stock": false,
+  "stock": true,
   "activo": true
 },
 {
@@ -754,7 +754,7 @@
   "notas_salida": "Especias cálidas y cítricos oscuros",
   "notas_corazon": "Notas aromáticas intensas y flores oscuras",
   "notas_fondo": "Ambar, maderas profundas, almizcle y resinas",
-  "stock": true,
+  "stock": false,
   "activo": true
 },
 {
@@ -880,7 +880,7 @@
   "notas_salida":"Canela, flor de azahar del naranjo, cardamomo y bergamota",
   "notas_corazon":"Vainilla Bourbon y elemí",
   "notas_fondo":"Praliné, ambroxan, madera de gaiac y almizcle",
-  "stock": true,
+  "stock": false,
   "activo": true
 },
 {
@@ -2077,7 +2077,7 @@
   "genero": "unisex",
   "ml": 100,
   "tipo": "EDP",
-  "precio": 58000,
+  "precio": 63000,
   "imagen": "img/maison-alhambra-philos-pura.webp",
 
   "descripcion": "Un oriental especiado opulento con corazón de gamuza y cacao, y base densa de vainilla y ámbar, perfecto para ocasiones especiales y climas fríos.",
@@ -2383,7 +2383,7 @@
   "genero": "unisex",
   "ml": 100,
   "tipo": "EDP",
-  "precio": 75000,
+  "precio": 68000,
   "imagen": "img/rayhaan-jungle-vibe.webp",
 
   "descripcion": "Un aromático fresco verde con higo, cítricos y acordes acuáticos sobre un fondo cremoso de sándalo, perfecto para uso diario en primavera y verano.",
@@ -2438,7 +2438,7 @@
   "ml": 100,
   "tipo": "EDP",
   "precio": 77000,
-  "imagen": "img/rayhaan-ocean-rush.webp",
+  "imagen": "img/rayhaan-corium.webp",
 
   "descripcion": "Ahumado, ambarado y sofisticado. Ideal para eventos formales, climas templados y uso nocturno, con un carácter de cuero moderno y distinguido.",
 

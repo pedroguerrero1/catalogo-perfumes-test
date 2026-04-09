@@ -39,6 +39,19 @@
     "activo": true
   },
   {
+    "id": 10122,
+    "nombre": "Decant Montale Arabians Tonka",
+    "marca": "Montale",
+    "genero": "Unisex",
+    "ml": 5,
+    "tipo": "Decant",
+    "precio": 20000,
+    "imagen": "img/dec/decant-montale-arabians-tonka.webp",
+    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
+    "stock": true,
+    "activo": true
+  },
+  {
     "id": 10003,
     "nombre": "Decant 9PM Night Out",
     "marca": "Afnan",
@@ -477,7 +490,7 @@
     "precio": 0,
     "imagen": "img/dec/decant-atlantis.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -607,7 +620,7 @@
     "precio": 0,
     "imagen": "img/dec/decant-sweet-paradise.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -620,7 +633,7 @@
     "precio": 10000,
     "imagen": "img/dec/decant-liquid-brun.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -1374,7 +1387,7 @@
     "precio": 10000,
     "imagen": "img/dec/decant-al-noble-ameer.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -1387,7 +1400,7 @@
     "precio": 10000,
     "imagen": "img/dec/decant-al-noble-safeer.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -1751,7 +1764,7 @@
     "precio": 8000,
     "imagen": "img/dec/decant-rayhaan-tropical-vibe.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
+    "stock": false,
     "activo": true
   },
   {
@@ -1763,19 +1776,6 @@
     "tipo": "Decant",
     "precio": 8000,
     "imagen": "img/dec/decant-rayhaan-ocean-rush.webp",
-    "descripcion": "Ideal para probar antes de comprar el frasco completo.",
-    "stock": true,
-    "activo": true
-  },
-  {
-    "id": 10122,
-    "nombre": "Decant Montale Arabians Tonka",
-    "marca": "Montale",
-    "genero": "Unisex",
-    "ml": 5,
-    "tipo": "Decant",
-    "precio": 20000,
-    "imagen": "img/dec/decant-montale-arabians-tonka.webp",
     "descripcion": "Ideal para probar antes de comprar el frasco completo.",
     "stock": true,
     "activo": true
