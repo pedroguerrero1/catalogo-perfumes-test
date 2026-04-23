@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
 // ===== FIREBASE CONFIG =====
 const firebaseConfig = {
@@ -16,7 +16,8 @@ const db = getFirestore(app);
 
 async function cargarColeccion(nombre) {
   try {
-    const snap = await getDocs(collection(db, nombre));
+    const q = query(collection(db, nombre), orderBy("id"));
+    const snap = await getDocs(q);
     return snap.docs.map(d => d.data()).filter(p => p.id && p.id !== 'temp');
   } catch(e) {
     console.warn(`No se pudo cargar ${nombre}:`, e);

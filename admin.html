@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Admin — Rulo Parfum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070a12;
+      --panel: #0e1424;
+      --card: #0b1220;
+      --border: rgba(255,255,255,.08);
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --gold: #c8922e;
+      --green: #25d366;
+      --red: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ===== LOGIN ===== */
+    #loginScreen {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+    }
+
+    .login-box h1 { color: var(--gold); font-size: 22px; margin-bottom: 6px; }
+    .login-box p  { color: var(--muted); font-size: 13px; margin-bottom: 28px; }
+
+    .login-box input {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 12px;
+      outline: none;
+    }
+
+    .login-box input:focus { border-color: var(--gold); }
+
+    .btn-login {
+      width: 100%;
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 13px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 6px;
+    }
+
+    .login-error { color: var(--red); font-size: 13px; margin-top: 10px; }
+
+    /* ===== ADMIN PANEL ===== */
+    #adminPanel { display: none; }
+
+    .topbar {
+      background: rgba(11,18,32,.95);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .topbar-brand { color: var(--gold); font-weight: 700; font-size: 16px; letter-spacing: .1em; }
+    .topbar-right { display: flex; align-items: center; gap: 12px; }
+
+    .btn-logout {
+      background: rgba(239,68,68,.15);
+      color: var(--red);
+      border: 1px solid rgba(239,68,68,.3);
+      border-radius: 10px;
+      padding: 7px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== TABS ===== */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      padding: 16px 24px 0;
+      border-bottom: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .tab {
+      padding: 10px 20px;
+      border: none;
+      background: none;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ===== CONTENT ===== */
+    .content { padding: 24px; max-width: 1100px; margin: 0 auto; }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 { font-size: 18px; }
+
+    .btn-add-product {
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== SEARCH BAR ===== */
+    .admin-search {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 16px;
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 16px;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+    }
+    .admin-search:focus { border-color: var(--gold); }
+
+    /* ===== TABLA DE PRODUCTOS ===== */
+    .productos-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .productos-table th {
+      text-align: left;
+      padding: 10px 12px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      color: var(--muted);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .productos-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255,255,255,.04);
+      font-size: 13px;
+      vertical-align: middle;
+    }
+
+    .productos-table tr:hover td { background: rgba(255,255,255,.02); }
+
+    .prod-img {
+      width: 44px;
+      height: 44px;
+      object-fit: contain;
+      background: white;
+      border-radius: 8px;
+    }
+
+    .prod-nombre { font-weight: 600; max-width: 200px; }
+    .prod-precio { color: var(--gold); font-weight: 700; }
+
+    .badge-stock {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .badge-stock.activo   { background: rgba(37,211,102,.15); color: var(--green); }
+    .badge-stock.agotado  { background: rgba(239,68,68,.15);  color: var(--red); }
+    .badge-stock.inactivo { background: rgba(156,163,175,.15); color: var(--muted); }
+
+    .acciones { display: flex; gap: 6px; }
+
+    .btn-edit, .btn-toggle, .btn-delete {
+      border: none;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-edit   { background: rgba(200,146,46,.15); color: var(--gold); border: 1px solid rgba(200,146,46,.3); }
+    .btn-toggle { background: rgba(37,211,102,.12); color: var(--green); border: 1px solid rgba(37,211,102,.3); }
+    .btn-toggle.off { background: rgba(239,68,68,.12); color: var(--red); border: 1px solid rgba(239,68,68,.3); }
+    .btn-delete { background: rgba(239,68,68,.12); color: var(--red); border: 1px solid rgba(239,68,68,.3); }
+
+    /* ===== MODAL EDITAR/AGREGAR ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.7);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-overlay.open { display: flex; }
+
+    .modal-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      width: 100%;
+      max-width: 560px;
+      max-height: 90vh;
+      overflow-y: auto;
+    }
+
+    .modal-box h3 { font-size: 18px; margin-bottom: 20px; color: var(--gold); }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-grid .full { grid-column: 1 / -1; }
+
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      color: var(--text);
+      font-size: 14px;
+      outline: none;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+
+    .form-group textarea { resize: vertical; min-height: 80px; }
+
+    .modal-footer {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 20px;
+    }
+
+    .btn-cancel {
+      background: rgba(255,255,255,.06);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-save {
+      background: var(--gold);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 10px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* ===== TOAST ===== */
+    #adminToast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--panel);
+      border: 1px solid var(--gold);
+      border-radius: 12px;
+      padding: 12px 24px;
+      font-size: 14px;
+      opacity: 0;
+      transition: all .3s ease;
+      z-index: 9999;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+
+    #adminToast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ===== LOADING ===== */
+    .loading { text-align: center; padding: 40px; color: var(--muted); }
+
+    /* ===== STATS ===== */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .stat-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-card .stat-num { font-size: 28px; font-weight: 700; color: var(--gold); }
+    .stat-card .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    @media (max-width: 640px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .productos-table th:nth-child(3),
+      .productos-table td:nth-child(3),
+      .productos-table th:nth-child(4),
+      .productos-table td:nth-child(4) { display: none; }
+      .content { padding: 16px; }
+      .topbar { padding: 0 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<div id="loginScreen">
+  <div class="login-box">
+    <h1>🔐 RULO Admin</h1>
+    <p>Ingresá con tu cuenta de administrador</p>
+    <input type="email" id="loginEmail" placeholder="Email" />
+    <input type="password" id="loginPassword" placeholder="Contraseña" />
+    <button class="btn-login" onclick="login()">Ingresar</button>
+    <div class="login-error" id="loginError"></div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="adminPanel">
+  <header class="topbar">
+    <div class="topbar-brand">⚙️ RULO Admin</div>
+    <div class="topbar-right">
+      <span id="adminEmail" style="font-size:13px;color:var(--muted)"></span>
+      <button class="btn-logout" onclick="logout()">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('perfumes', this)">Perfumes</button>
+    <button class="tab" onclick="switchTab('decants', this)">Decants</button>
+    <button class="tab" onclick="switchTab('promos', this)">Promos</button>
+    <button class="tab" onclick="switchTab('desodorantes', this)">Desodorantes</button>
+  </div>
+
+  <div class="content">
+    <!-- Stats -->
+    <div class="stats-grid" id="statsGrid"></div>
+
+    <div class="section-header">
+      <h2 id="sectionTitle">Perfumes</h2>
+      <button class="btn-add-product" onclick="abrirModal()">+ Agregar producto</button>
+    </div>
+
+    <input class="admin-search" id="adminSearch" type="search" placeholder="Buscar por nombre o marca..." oninput="filtrarTabla()" />
+
+    <div style="overflow-x:auto;">
+      <table class="productos-table">
+        <thead>
+          <tr>
+            <th>Img</th>
+            <th>Nombre</th>
+            <th>Marca</th>
+            <th>Precio</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="productosBody">
+          <tr><td colspan="6" class="loading">Cargando...</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MODAL EDITAR / AGREGAR ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <h3 id="modalTitle">Agregar producto</h3>
+    <input type="hidden" id="editId" />
+    <div class="form-grid">
+      <div class="form-group full">
+        <label>Nombre</label>
+        <input type="text" id="fNombre" placeholder="Ej: Xerjoff Erba Pura" />
+      </div>
+      <div class="form-group">
+        <label>Marca</label>
+        <input type="text" id="fMarca" placeholder="Ej: Xerjoff" />
+      </div>
+      <div class="form-group">
+        <label>Género</label>
+        <select id="fGenero">
+          <option value="unisex">Unisex</option>
+          <option value="Hombre">Hombre</option>
+          <option value="Mujer">Mujer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>ML</label>
+        <input type="number" id="fMl" placeholder="100" />
+      </div>
+      <div class="form-group">
+        <label>Precio</label>
+        <input type="number" id="fPrecio" placeholder="150000" />
+      </div>
+      <div class="form-group">
+        <label>Tipo</label>
+        <input type="text" id="fTipo" placeholder="EDP / EDT" />
+      </div>
+      <div class="form-group full">
+        <label>Imagen (ruta)</label>
+        <input type="text" id="fImagen" placeholder="img/nombre-perfume.webp" />
+      </div>
+      <div class="form-group full">
+        <label>Descripción</label>
+        <textarea id="fDescripcion" placeholder="Descripción del perfume..."></textarea>
+      </div>
+      <div class="form-group full">
+        <label>Notas de salida</label>
+        <input type="text" id="fSalida" />
+      </div>
+      <div class="form-group full">
+        <label>Notas de corazón</label>
+        <input type="text" id="fCorazon" />
+      </div>
+      <div class="form-group full">
+        <label>Notas de fondo</label>
+        <input type="text" id="fFondo" />
+      </div>
+      <div class="form-group">
+        <label>Stock</label>
+        <select id="fStock">
+          <option value="true">Con stock</option>
+          <option value="false">Sin stock</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Activo</label>
+        <select id="fActivo">
+          <option value="true">Activo</option>
+          <option value="false">Inactivo</option>
+        </select>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="cerrarModal()">Cancelar</button>
+      <button class="btn-save" onclick="guardarProducto()">Guardar</button>
+    </div>
+  </div>
+</div>
+
+<div id="adminToast"></div>
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+  import { getFirestore, collection, getDocs, doc, setDoc, updateDoc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+  import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyDBxkSDdPDlE_7mekIvl_GKzgC_GXzCcuw",
+    authDomain: "ruloparfum.firebaseapp.com",
+    projectId: "ruloparfum",
+    storageBucket: "ruloparfum.firebasestorage.app",
+    messagingSenderId: "167849199505",
+    appId: "1:167849199505:web:d5822af67e5f2024aa3c30"
+  };
+
+  const app  = initializeApp(firebaseConfig);
+  const db   = getFirestore(app);
+  const auth = getAuth(app);
+
+  let tabActual   = 'perfumes';
+  let productos   = [];
+  let editando    = null;
+
+  // ===== AUTH =====
+  onAuthStateChanged(auth, user => {
+    if (user) {
+      document.getElementById('loginScreen').style.display  = 'none';
+      document.getElementById('adminPanel').style.display   = 'block';
+      document.getElementById('adminEmail').textContent     = user.email;
+      cargarProductos();
+    } else {
+      document.getElementById('loginScreen').style.display  = 'flex';
+      document.getElementById('adminPanel').style.display   = 'none';
+    }
+  });
+
+  window.login = async function() {
+    const email = document.getElementById('loginEmail').value.trim();
+    const pass  = document.getElementById('loginPassword').value;
+    const err   = document.getElementById('loginError');
+    err.textContent = '';
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+    } catch(e) {
+      err.textContent = 'Email o contraseña incorrectos.';
+    }
+  };
+
+  window.logout = async function() {
+    await signOut(auth);
+  };
+
+  // Enter en login
+  document.getElementById('loginPassword').addEventListener('keydown', e => {
+    if (e.key === 'Enter') window.login();
+  });
+
+  // ===== TABS =====
+  window.switchTab = function(tab, btn) {
+    tabActual = tab;
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('sectionTitle').textContent = btn.textContent;
+    document.getElementById('adminSearch').value = '';
+    cargarProductos();
+  };
+
+  // ===== CARGAR PRODUCTOS =====
+  async function cargarProductos() {
+    document.getElementById('productosBody').innerHTML = '<tr><td colspan="6" class="loading">Cargando...</td></tr>';
+    try {
+      const q    = query(collection(db, tabActual), orderBy('id'));
+      const snap = await getDocs(q);
+      productos  = snap.docs.map(d => d.data()).filter(p => p.id && p.id !== 'temp');
+      renderTabla(productos);
+      renderStats();
+    } catch(e) {
+      console.error(e);
+    }
+  }
+
+  // ===== STATS =====
+  function renderStats() {
+    const total    = productos.length;
+    const activos  = productos.filter(p => p.activo !== false && p.stock !== false).length;
+    const agotados = productos.filter(p => p.stock === false).length;
+    const inactivos= productos.filter(p => p.activo === false).length;
+
+    document.getElementById('statsGrid').innerHTML = `
+      <div class="stat-card"><div class="stat-num">${total}</div><div class="stat-label">Total productos</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--green)">${activos}</div><div class="stat-label">Con stock</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--red)">${agotados}</div><div class="stat-label">Sin stock</div></div>
+      <div class="stat-card"><div class="stat-num" style="color:var(--muted)">${inactivos}</div><div class="stat-label">Inactivos</div></div>
+    `;
+  }
+
+  // ===== RENDER TABLA =====
+  function renderTabla(lista) {
+    const tbody = document.getElementById('productosBody');
+    if (lista.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="6" class="loading">No hay productos.</td></tr>';
+      return;
+    }
+    tbody.innerHTML = lista.map(p => {
+      const estadoLabel = p.activo === false ? 'inactivo' : p.stock === false ? 'agotado' : 'activo';
+      const estadoTexto = p.activo === false ? 'Inactivo' : p.stock === false ? 'Sin stock' : 'Con stock';
+      const imgSrc = (p.imagen || '').replace(/^\/+/, '');
+      return `
+        <tr>
+          <td><img class="prod-img" src="${imgSrc}" onerror="this.src='img/placeholder.webp'"></td>
+          <td class="prod-nombre">${p.nombre}</td>
+          <td>${p.marca || '-'}</td>
+          <td class="prod-precio">$${new Intl.NumberFormat('es-AR').format(p.precio)}</td>
+          <td><span class="badge-stock ${estadoLabel}">${estadoTexto}</span></td>
+          <td>
+            <div class="acciones">
+              <button class="btn-edit" onclick="abrirModal(${p.id})">✏️ Editar</button>
+              <button class="btn-toggle ${p.stock === false ? '' : 'off'}" onclick="toggleStock(${p.id})">
+                ${p.stock === false ? '✅ Activar' : '🚫 Agotar'}
+              </button>
+            </div>
+          </td>
+        </tr>`;
+    }).join('');
+  }
+
+  // ===== FILTRAR TABLA =====
+  window.filtrarTabla = function() {
+    const q = document.getElementById('adminSearch').value.toLowerCase();
+    const filtrados = productos.filter(p =>
+      (p.nombre || '').toLowerCase().includes(q) ||
+      (p.marca  || '').toLowerCase().includes(q)
+    );
+    renderTabla(filtrados);
+  };
+
+  // ===== TOGGLE STOCK =====
+  window.toggleStock = async function(id) {
+    const p = productos.find(x => x.id === id);
+    if (!p) return;
+    const nuevoStock = p.stock === false ? true : false;
+    try {
+      await updateDoc(doc(db, tabActual, String(id)), { stock: nuevoStock });
+      showToast(nuevoStock ? '✅ Stock activado' : '🚫 Marcado como agotado');
+      cargarProductos();
+    } catch(e) { showToast('❌ Error al actualizar'); }
+  };
+
+  // ===== MODAL =====
+  window.abrirModal = function(id = null) {
+    editando = id;
+    document.getElementById('modalTitle').textContent = id ? 'Editar producto' : 'Agregar producto';
+    document.getElementById('modalOverlay').classList.add('open');
+
+    if (id) {
+      const p = productos.find(x => x.id === id);
+      if (!p) return;
+      document.getElementById('editId').value        = p.id;
+      document.getElementById('fNombre').value       = p.nombre || '';
+      document.getElementById('fMarca').value        = p.marca || '';
+      document.getElementById('fGenero').value       = p.genero || 'unisex';
+      document.getElementById('fMl').value           = p.ml || '';
+      document.getElementById('fPrecio').value       = p.precio || '';
+      document.getElementById('fTipo').value         = p.tipo || '';
+      document.getElementById('fImagen').value       = p.imagen || '';
+      document.getElementById('fDescripcion').value  = p.descripcion || '';
+      document.getElementById('fSalida').value       = p.notas_salida || '';
+      document.getElementById('fCorazon').value      = p.notas_corazon || '';
+      document.getElementById('fFondo').value        = p.notas_fondo || '';
+      document.getElementById('fStock').value        = String(p.stock !== false);
+      document.getElementById('fActivo').value       = String(p.activo !== false);
+    } else {
+      document.getElementById('editId').value        = '';
+      document.getElementById('fNombre').value       = '';
+      document.getElementById('fMarca').value        = '';
+      document.getElementById('fGenero').value       = 'unisex';
+      document.getElementById('fMl').value           = '';
+      document.getElementById('fPrecio').value       = '';
+      document.getElementById('fTipo').value         = 'EDP';
+      document.getElementById('fImagen').value       = '';
+      document.getElementById('fDescripcion').value  = '';
+      document.getElementById('fSalida').value       = '';
+      document.getElementById('fCorazon').value      = '';
+      document.getElementById('fFondo').value        = '';
+      document.getElementById('fStock').value        = 'true';
+      document.getElementById('fActivo').value       = 'true';
+    }
+  };
+
+  window.cerrarModal = function() {
+    document.getElementById('modalOverlay').classList.remove('open');
+    editando = null;
+  };
+
+  // ===== GUARDAR PRODUCTO =====
+  window.guardarProducto = async function() {
+    const nombre = document.getElementById('fNombre').value.trim();
+    const precio = parseFloat(document.getElementById('fPrecio').value);
+
+    if (!nombre || !precio) {
+      showToast('⚠️ Nombre y precio son obligatorios');
+      return;
+    }
+
+    // Si es nuevo, generar ID basado en timestamp
+    const id = editando || Date.now();
+
+    const data = {
+      id,
+      nombre,
+      marca:          document.getElementById('fMarca').value.trim(),
+      genero:         document.getElementById('fGenero').value,
+      ml:             parseInt(document.getElementById('fMl').value) || 0,
+      precio,
+      tipo:           document.getElementById('fTipo').value.trim(),
+      imagen:         document.getElementById('fImagen').value.trim(),
+      descripcion:    document.getElementById('fDescripcion').value.trim(),
+      notas_salida:   document.getElementById('fSalida').value.trim(),
+      notas_corazon:  document.getElementById('fCorazon').value.trim(),
+      notas_fondo:    document.getElementById('fFondo').value.trim(),
+      stock:          document.getElementById('fStock').value === 'true',
+      activo:         document.getElementById('fActivo').value === 'true',
+    };
+
+    try {
+      await setDoc(doc(db, tabActual, String(id)), data);
+      showToast(editando ? '✅ Producto actualizado' : '✅ Producto agregado');
+      cerrarModal();
+      cargarProductos();
+    } catch(e) {
+      showToast('❌ Error al guardar');
+      console.error(e);
+    }
+  };
+
+  // ===== TOAST =====
+  function showToast(msg) {
+    const t = document.getElementById('adminToast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+  }
+
+  // Cerrar modal con Escape
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') window.cerrarModal(); });
+</script>
+</body>
+</html>
