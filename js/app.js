@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
+import { getStorage, ref, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
 // ===== FIREBASE CONFIG =====
 const firebaseConfig = {
@@ -11,8 +12,40 @@ const firebaseConfig = {
   appId: "1:167849199505:web:d5822af67e5f2024aa3c30"
 };
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
+const app     = initializeApp(firebaseConfig);
+const db      = getFirestore(app);
+const storage = getStorage(app);
+
+// Cache de URLs para no pedir la misma imagen dos veces
+const urlCache = {};
+
+async function getImgUrl(path) {
+  if (!path) return 'img/placeholder.webp';
+  // Si ya es una URL completa (http/https), usarla directamente
+  if (path.startsWith('http')) return path;
+  // Si está en cache, devolverla
+  if (urlCache[path]) return urlCache[path];
+  try {
+    const clean = path.replace(/^\/+/, '');
+    const url = await getDownloadURL(ref(storage, clean));
+    urlCache[path] = url;
+    return url;
+  } catch(e) {
+    // Si no está en Storage, intentar cargar localmente como fallback
+    return path.replace(/^\/+/, '');
+  }
+}
+
+async function cargarColeccion(nombre) {
+  try {
+    const q = query(collection(db, nombre), orderBy("id"));
+    const snap = await getDocs(q);
+    return snap.docs.map(d => d.data()).filter(p => p.id && p.id !== 'temp');
+  } catch(e) {
+    console.warn(`No se pudo cargar ${nombre}:`, e);
+    return [];
+  }
+}
 
 async function cargarColeccion(nombre) {
   try {
@@ -26,11 +59,6 @@ async function cargarColeccion(nombre) {
 }
 
 const WHATSAPP_NUMBER = "5493535669706";
-
-function imgSrc(path){
-  const clean = (path || "").replace(/^\/+/, "");
-  return new URL(clean, document.baseURI).toString();
-}
 
 const grid            = document.getElementById("grid");
 const decantsGrid     = document.getElementById("decantsGrid");
@@ -102,15 +130,17 @@ window.openModalById = function(id) {
   if (p) openModal(p);
 }
 
-function cardTemplate(p){
-  const placeholder = imgSrc("img/placeholder.webp");
+async function cardTemplate(p){
+  const placeholder = 'img/placeholder.webp';
   const isFav = favoritos.includes(p.id);
   const outOfStock = p.stock === false;
+  const imgUrl = await getImgUrl(p.imagen);
+
   return `
     <article class="card ${outOfStock ? 'out-of-stock' : ''}" onclick="openModalById(${p.id})">
       <div class="thumb">
         ${outOfStock ? '<div class="badge-out">Agotado</div>' : ''}
-        <img src="${imgSrc(p.imagen)}" alt="${p.nombre}" onerror="this.onerror=null; this.src='${placeholder}'">
+        <img src="${imgUrl}" alt="${p.nombre}" onerror="this.onerror=null; this.src='${placeholder}'">
       </div>
       <div class="content">
         <div class="card__info">
@@ -120,7 +150,13 @@ function cardTemplate(p){
             <span class="badge">${p.genero || "-"}</span>
             <span class="badge">${p.ml || "-"}ml</span>
           </div>
-          <div class="price">${outOfStock ? "Sin stock" : "$" + moneyARS(p.precio)}</div>
+          <div class="price">
+            ${outOfStock ? "Sin stock" : `
+              ${p.precio_descuento ? `<span class="price-original">$${moneyARS(p.precio)}</span>` : ''}
+              <span class="price-actual">$${moneyARS(p.precio_descuento || p.precio)}</span>
+              ${p.precio_descuento ? `<span class="price-badge">-${Math.round((1 - p.precio_descuento / p.precio) * 100)}%</span>` : ''}
+            `}
+          </div>
         </div>
         <div class="card__actions">
           <button class="btn btn-add ${isFav ? 'active' : ''}"
@@ -154,24 +190,34 @@ function renderCategories(lista){
   if (container) container.innerHTML = lista.map(categoryTemplate).join("");
 }
 
-function renderPerfumes(list){
-  grid.innerHTML = list.map(cardTemplate).join("");
+async function renderPerfumes(list){
+  const cards = await Promise.all(list.map(cardTemplate));
+  grid.innerHTML = cards.join("");
   empty.classList.toggle("hidden", list.length !== 0);
 }
 
-function renderDecants(list){
-  if (decantsGrid) decantsGrid.innerHTML = list.filter(p => p.activo !== false).map(cardTemplate).join("");
+async function renderDecants(list){
+  if (decantsGrid) {
+    const cards = await Promise.all(list.filter(p => p.activo !== false).map(cardTemplate));
+    decantsGrid.innerHTML = cards.join("");
+  }
 }
 
-function renderPromos(list){
+async function renderPromos(list){
   const section = document.getElementById("promos");
   const activos = list.filter(p => p.activo !== false);
   if (section) section.style.display = activos.length === 0 ? "none" : "";
-  if (promosGrid) promosGrid.innerHTML = activos.map(cardTemplate).join("");
+  if (promosGrid) {
+    const cards = await Promise.all(activos.map(cardTemplate));
+    promosGrid.innerHTML = cards.join("");
+  }
 }
 
-function renderDesodorantes(list){
-  if (desodorantsGrid) desodorantsGrid.innerHTML = list.filter(p => p.activo !== false).map(cardTemplate).join("");
+async function renderDesodorantes(list){
+  if (desodorantsGrid) {
+    const cards = await Promise.all(list.filter(p => p.activo !== false).map(cardTemplate));
+    desodorantsGrid.innerHTML = cards.join("");
+  }
 }
 
 const modal       = document.getElementById("modal");
@@ -182,13 +228,23 @@ const modalBadges = document.getElementById("modalBadges");
 const modalDesc   = document.getElementById("modalDesc");
 const modalWa     = document.getElementById("modalWa");
 
-function openModal(p){
+async function openModal(p){
   modal.classList.remove("hidden");
   document.body.classList.add("modal-open");
   document.body.style.overflow = "hidden";
-  modalImg.src = imgSrc(p.imagen);
+  modalImg.src = await getImgUrl(p.imagen);
   modalTitle.textContent = p.nombre;
-  modalPrice.textContent = p.stock === false ? "Sin stock" : `$${moneyARS(p.precio)}`;
+  if (p.stock === false) {
+    modalPrice.innerHTML = "Sin stock";
+  } else if (p.precio_descuento) {
+    modalPrice.innerHTML = `
+      <span class="price-original">$${moneyARS(p.precio)}</span>
+      <span class="price-actual">$${moneyARS(p.precio_descuento)}</span>
+      <span class="price-badge">-${Math.round((1 - p.precio_descuento / p.precio) * 100)}%</span>
+    `;
+  } else {
+    modalPrice.innerHTML = `<span class="price-actual">$${moneyARS(p.precio)}</span>`;
+  }
   modalBadges.innerHTML = `<span class="badge">${p.marca || "-"}</span><span class="badge">${p.genero || "-"}</span><span class="badge">${p.ml || "-"}ml</span>`;
   modalDesc.textContent = p.descripcion || "Consultá disponibilidad por WhatsApp.";
   document.getElementById("notas-salida").textContent = p.notas_salida || "-";
@@ -208,7 +264,7 @@ document.addEventListener("click", (e) => {
 });
 document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 
-function applyFilters(){
+async function applyFilters(){
   const q = (search?.value || "").toLowerCase();
   const f = (filter?.value || "all");
   const matchesQuery  = (p) => (p.nombre || "").toLowerCase().includes(q) || (p.marca || "").toLowerCase().includes(q);
@@ -217,24 +273,27 @@ function applyFilters(){
 
   let listP = perfumes.filter(p => p.activo !== false && matchesQuery(p) && matchesGender(p));
   if (sortFn) listP.sort(sortFn);
-  renderPerfumes(listP);
+  await renderPerfumes(listP);
 
   const listD  = decants.filter(p => p.activo !== false && matchesQuery(p));
   const listPr = promos.filter(p => p.activo !== false && matchesQuery(p));
   const listDe = desodorantes.filter(p => p.activo !== false && matchesQuery(p));
 
   if (decantsGrid) {
-    decantsGrid.innerHTML = listD.map(cardTemplate).join("");
+    const cards = await Promise.all(listD.map(cardTemplate));
+    decantsGrid.innerHTML = cards.join("");
     const sec = document.getElementById("decants");
     if (sec) sec.style.display = listD.length === 0 && q ? "none" : "";
   }
   const promosSec = document.getElementById("promos");
   if (promosGrid) {
-    promosGrid.innerHTML = listPr.map(cardTemplate).join("");
+    const cards = await Promise.all(listPr.map(cardTemplate));
+    promosGrid.innerHTML = cards.join("");
     if (promosSec) promosSec.style.display = listPr.length === 0 ? "none" : "";
   }
   if (desodorantsGrid) {
-    desodorantsGrid.innerHTML = listDe.map(cardTemplate).join("");
+    const cards = await Promise.all(listDe.map(cardTemplate));
+    desodorantsGrid.innerHTML = cards.join("");
     const sec = document.getElementById("desodorantes");
     if (sec) sec.style.display = listDe.length === 0 && q ? "none" : "";
   }
@@ -270,7 +329,7 @@ window.toggleCart = function() {
   if (drawer.classList.contains("is-open")) renderCartItems();
 }
 
-function renderCartItems() {
+async function renderCartItems() {
   const container  = document.getElementById("cartItems");
   const totalSumEl = document.getElementById("cartTotalSum");
   if (!container) return;
@@ -282,18 +341,20 @@ function renderCartItems() {
     if(totalSumEl) totalSumEl.innerText = "$0";
     return;
   }
-  container.innerHTML = seleccionados.map(p => {
+  const items = await Promise.all(seleccionados.map(async p => {
     total += Number(p.precio) || 0;
+    const imgUrl = await getImgUrl(p.imagen);
     return `
       <div class="cart-item">
-        <img src="${imgSrc(p.imagen)}" onerror="this.src='img/placeholder.webp'">
+        <img src="${imgUrl}" onerror="this.src='img/placeholder.webp'">
         <div class="cart-item-info">
           <div>${p.nombre}</div>
           <div class="price">$${moneyARS(p.precio)}</div>
         </div>
         <button onclick="toggleFav(${p.id}, event)" style="background:none;border:none;color:#ff4444;font-size:18px;cursor:pointer;">✕</button>
       </div>`;
-  }).join("");
+  }));
+  container.innerHTML = items.join("");
   if(totalSumEl) totalSumEl.innerText = `$${moneyARS(total)}`;
 }
 

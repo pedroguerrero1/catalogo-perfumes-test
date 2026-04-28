@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Migrar imágenes a Firebase Storage</title>
+  <style>
+    body { font-family: monospace; background: #0a0a0a; color: #e5e5e5; padding: 30px; }
+    h1 { color: #c8922e; margin-bottom: 6px; }
+    p { color: #888; margin-bottom: 20px; }
+    .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
+    button {
+      background: #c8922e; color: white; border: none;
+      padding: 12px 20px; font-size: 14px; border-radius: 8px;
+      cursor: pointer; font-family: monospace;
+    }
+    button:disabled { opacity: 0.4; cursor: not-allowed; }
+    button.green { background: #25d366; }
+    button.gray  { background: #444; }
+    #log {
+      margin-top: 20px; background: #111; padding: 20px;
+      border-radius: 8px; max-height: 600px; overflow-y: auto;
+      line-height: 2; font-size: 13px;
+    }
+    .ok   { color: #25d366; }
+    .err  { color: #ff4444; }
+    .info { color: #c8922e; }
+    .skip { color: #888; }
+    #progress {
+      margin-top: 16px; background: #222; border-radius: 8px;
+      height: 12px; overflow: hidden; display: none;
+    }
+    #progressBar {
+      height: 100%; background: #c8922e;
+      width: 0%; transition: width 0.3s ease;
+    }
+    #stats {
+      margin-top: 12px; font-size: 13px; color: #888;
+    }
+  </style>
+</head>
+<body>
+  <h1>📸 Migrar imágenes a Firebase Storage</h1>
+  <p>Esta página sube todas las imágenes de tu carpeta <code>img/</code> a Firebase Storage. Usala una sola vez.</p>
+
+  <div class="buttons">
+    <button onclick="migrarCarpeta('img', '')" id="btn-img">📁 Migrar img/ (perfumes)</button>
+    <button onclick="migrarCarpeta('img/decants', 'decants')" id="btn-decants">📁 Migrar decants/</button>
+    <button onclick="migrarCarpeta('img/promos', 'promos')" id="btn-promos">📁 Migrar promos/</button>
+    <button onclick="migrarCarpeta('img/desodorantes', 'desodorantes')" id="btn-desodorantes">📁 Migrar desodorantes/</button>
+    <button class="green" onclick="migrarTodo()" id="btn-todo">🚀 Migrar TODO</button>
+    <button class="gray" onclick="limpiarLog()">🗑️ Limpiar log</button>
+  </div>
+
+  <div id="progress"><div id="progressBar"></div></div>
+  <div id="stats"></div>
+  <div id="log"></div>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDBxkSDdPDlE_7mekIvl_GKzgC_GXzCcuw",
+      authDomain: "ruloparfum.firebaseapp.com",
+      projectId: "ruloparfum",
+      storageBucket: "ruloparfum.firebasestorage.app",
+      messagingSenderId: "167849199505",
+      appId: "1:167849199505:web:d5822af67e5f2024aa3c30"
+    };
+
+    const app     = initializeApp(firebaseConfig);
+    const storage = getStorage(app);
+
+    const logEl      = document.getElementById('log');
+    const progressEl = document.getElementById('progress');
+    const barEl      = document.getElementById('progressBar');
+    const statsEl    = document.getElementById('stats');
+
+    function log(msg, tipo = '') {
+      logEl.innerHTML += `<div class="${tipo}">${msg}</div>`;
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    window.limpiarLog = () => { logEl.innerHTML = ''; statsEl.textContent = ''; };
+
+    // Obtener lista de imágenes desde el servidor (Live Server)
+    async function getImagenes(carpeta) {
+      // Intentamos traer el listado leyendo el JSON de productos
+      // y extrayendo las rutas de imagen únicas
+      const archivos = [];
+
+      // Extensiones soportadas
+      const exts = ['.webp', '.jpg', '.jpeg', '.png', '.gif'];
+
+      // Leemos los JSONs para obtener las rutas de imagen reales
+      const colecciones = ['perfumes', 'decants', 'promos', 'desodorantes'];
+      const rutas = new Set();
+
+      for (const col of colecciones) {
+        try {
+          const res = await fetch(`data/${col}.json`);
+          if (!res.ok) continue;
+          const items = await res.json();
+          items.forEach(p => {
+            if (p.imagen) rutas.add(p.imagen.replace(/^\//, ''));
+          });
+        } catch(e) {}
+      }
+
+      // Filtrar por carpeta
+      for (const ruta of rutas) {
+        const enCarpeta = carpeta === ''
+          ? !ruta.includes('decants/') && !ruta.includes('promos/') && !ruta.includes('desodorantes/')
+          : ruta.startsWith(carpeta.replace('img/', 'img/'));
+
+        if (enCarpeta) archivos.push(ruta);
+      }
+
+      return archivos;
+    }
+
+    async function subirImagen(rutaLocal, storageKey) {
+      try {
+        const res = await fetch(rutaLocal);
+        if (!res.ok) throw new Error(`No encontrada: ${rutaLocal}`);
+        const blob = await res.blob();
+        const storageRef = ref(storage, storageKey);
+        await uploadBytes(storageRef, blob, { contentType: blob.type });
+        const url = await getDownloadURL(storageRef);
+        return url;
+      } catch(e) {
+        throw e;
+      }
+    }
+
+    window.migrarCarpeta = async function(carpetaLocal, subcarpeta) {
+      const btnId = subcarpeta === '' ? 'btn-img' : `btn-${subcarpeta}`;
+      document.getElementById(btnId).disabled = true;
+
+      const label = subcarpeta || 'perfumes';
+      log(`<br>📁 Iniciando migración de <strong>${label}</strong>...`, 'info');
+
+      const imagenes = await getImagenes(carpetaLocal);
+
+      if (imagenes.length === 0) {
+        log(`⚠️ No se encontraron imágenes en ${carpetaLocal}. Asegurate de correr esto con Live Server y que los JSONs estén en data/`, 'err');
+        document.getElementById(btnId).disabled = false;
+        return;
+      }
+
+      log(`📊 ${imagenes.length} imágenes encontradas.`, 'info');
+      progressEl.style.display = 'block';
+
+      let ok = 0, err = 0;
+
+      for (let i = 0; i < imagenes.length; i++) {
+        const rutaLocal = imagenes[i];
+        // Storage key: img/decants/archivo.webp
+        const storageKey = rutaLocal;
+
+        try {
+          const url = await subirImagen(rutaLocal, storageKey);
+          log(`✅ ${rutaLocal}`, 'ok');
+          ok++;
+        } catch(e) {
+          log(`❌ ${rutaLocal}: ${e.message}`, 'err');
+          err++;
+        }
+
+        barEl.style.width = `${Math.round(((i + 1) / imagenes.length) * 100)}%`;
+        statsEl.textContent = `${i + 1} / ${imagenes.length} — ✅ ${ok} subidas, ❌ ${err} errores`;
+      }
+
+      log(`<br>✅ ${label}: ${ok} subidas, ${err} errores.`, ok > 0 ? 'ok' : 'err');
+      document.getElementById(btnId).disabled = false;
+    };
+
+    window.migrarTodo = async function() {
+      document.getElementById('btn-todo').disabled = true;
+      log('<br>🚀 Iniciando migración completa...', 'info');
+
+      await window.migrarCarpeta('img', '');
+      await window.migrarCarpeta('img/decants', 'decants');
+      await window.migrarCarpeta('img/promos', 'promos');
+      await window.migrarCarpeta('img/desodorantes', 'desodorantes');
+
+      log('<br>🎉 Migración completa. Ya podés cerrar esta página.', 'info');
+      document.getElementById('btn-todo').disabled = false;
+    };
+  </script>
+</body>
+</html>

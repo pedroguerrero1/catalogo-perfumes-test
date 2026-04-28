@@ -473,12 +473,22 @@
         <input type="number" id="fPrecio" placeholder="150000" />
       </div>
       <div class="form-group">
+        <label>Precio descuento (opcional)</label>
+        <input type="number" id="fPrecioDescuento" placeholder="160000" />
+      </div>
+      <div class="form-group">
         <label>Tipo</label>
         <input type="text" id="fTipo" placeholder="EDP / EDT" />
       </div>
       <div class="form-group full">
-        <label>Imagen (ruta)</label>
-        <input type="text" id="fImagen" placeholder="img/nombre-perfume.webp" />
+        <label>Imagen</label>
+        <input type="file" id="fImagenFile" accept="image/*" style="background:var(--card);border:1px solid var(--border);border-radius:10px;padding:10px;color:var(--text);width:100%;" />
+        <div id="imagenPreview" style="margin-top:8px;display:none;">
+          <img id="imagenPreviewImg" style="width:80px;height:80px;object-fit:contain;background:white;border-radius:8px;" />
+          <span id="imagenPreviewNombre" style="font-size:12px;color:var(--muted);margin-left:8px;"></span>
+        </div>
+        <input type="hidden" id="fImagen" />
+        <div style="font-size:11px;color:var(--muted);margin-top:4px;">Si no subís imagen nueva, se mantiene la actual.</div>
       </div>
       <div class="form-group full">
         <label>Descripción</label>
@@ -524,6 +534,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
   import { getFirestore, collection, getDocs, doc, setDoc, updateDoc, deleteDoc, query, orderBy } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
   import { getAuth, signInWithEmailAndPassword, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+  import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-storage.js";
 
   const firebaseConfig = {
     apiKey: "AIzaSyDBxkSDdPDlE_7mekIvl_GKzgC_GXzCcuw",
@@ -534,9 +545,10 @@
     appId: "1:167849199505:web:d5822af67e5f2024aa3c30"
   };
 
-  const app  = initializeApp(firebaseConfig);
-  const db   = getFirestore(app);
-  const auth = getAuth(app);
+  const app     = initializeApp(firebaseConfig);
+  const db      = getFirestore(app);
+  const auth    = getAuth(app);
+  const storage = getStorage(app);
 
   let tabActual   = 'perfumes';
   let productos   = [];
@@ -681,9 +693,21 @@
       document.getElementById('fMarca').value        = p.marca || '';
       document.getElementById('fGenero').value       = p.genero || 'unisex';
       document.getElementById('fMl').value           = p.ml || '';
-      document.getElementById('fPrecio').value       = p.precio || '';
+      document.getElementById('fPrecio').value           = p.precio || '';
+      document.getElementById('fPrecioDescuento').value   = p.precio_descuento || '';
       document.getElementById('fTipo').value         = p.tipo || '';
       document.getElementById('fImagen').value       = p.imagen || '';
+      document.getElementById('fImagenFile').value   = '';
+      // Mostrar preview de imagen actual
+      if (p.imagen) {
+        const preview = document.getElementById('imagenPreview');
+        const previewImg = document.getElementById('imagenPreviewImg');
+        const previewNombre = document.getElementById('imagenPreviewNombre');
+        preview.style.display = 'flex';
+        preview.style.alignItems = 'center';
+        previewImg.src = p.imagen;
+        previewNombre.textContent = 'Imagen actual';
+      }
       document.getElementById('fDescripcion').value  = p.descripcion || '';
       document.getElementById('fSalida').value       = p.notas_salida || '';
       document.getElementById('fCorazon').value      = p.notas_corazon || '';
@@ -696,7 +720,8 @@
       document.getElementById('fMarca').value        = '';
       document.getElementById('fGenero').value       = 'unisex';
       document.getElementById('fMl').value           = '';
-      document.getElementById('fPrecio').value       = '';
+      document.getElementById('fPrecio').value        = '';
+      document.getElementById('fPrecioDescuento').value = '';
       document.getElementById('fTipo').value         = 'EDP';
       document.getElementById('fImagen').value       = '';
       document.getElementById('fDescripcion').value  = '';
@@ -713,6 +738,19 @@
     editando = null;
   };
 
+  // Preview de imagen al seleccionar archivo
+  document.getElementById('fImagenFile').addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const preview = document.getElementById('imagenPreview');
+    const previewImg = document.getElementById('imagenPreviewImg');
+    const previewNombre = document.getElementById('imagenPreviewNombre');
+    preview.style.display = 'flex';
+    preview.style.alignItems = 'center';
+    previewImg.src = URL.createObjectURL(file);
+    previewNombre.textContent = file.name;
+  });
+
   // ===== GUARDAR PRODUCTO =====
   window.guardarProducto = async function() {
     const nombre = document.getElementById('fNombre').value.trim();
@@ -723,24 +761,49 @@
       return;
     }
 
-    // Si es nuevo, generar ID basado en timestamp
+    const btnSave = document.querySelector('.btn-save');
+    btnSave.textContent = 'Guardando...';
+    btnSave.disabled = true;
+
+    // Si se seleccionó imagen nueva, subirla a Storage
+    const fileInput = document.getElementById('fImagenFile');
+    let imagenUrl = document.getElementById('fImagen').value;
+
+    if (fileInput.files.length > 0) {
+      const file = fileInput.files[0];
+      const ext = file.name.split('.').pop();
+      const storageKey = `img/${tabActual}/${Date.now()}.${ext}`;
+      try {
+        const storageRef = ref(storage, storageKey);
+        await uploadBytes(storageRef, file);
+        imagenUrl = await getDownloadURL(storageRef);
+      } catch(e) {
+        showToast('❌ Error al subir la imagen');
+        btnSave.textContent = 'Guardar';
+        btnSave.disabled = false;
+        return;
+      }
+    }
+
     const id = editando || Date.now();
+    const precioDescuentoVal = parseFloat(document.getElementById('fPrecioDescuento').value);
 
     const data = {
       id,
       nombre,
-      marca:          document.getElementById('fMarca').value.trim(),
-      genero:         document.getElementById('fGenero').value,
-      ml:             parseInt(document.getElementById('fMl').value) || 0,
+      marca:           document.getElementById('fMarca').value.trim(),
+      genero:          document.getElementById('fGenero').value,
+      ml:              parseInt(document.getElementById('fMl').value) || 0,
       precio,
-      tipo:           document.getElementById('fTipo').value.trim(),
-      imagen:         document.getElementById('fImagen').value.trim(),
-      descripcion:    document.getElementById('fDescripcion').value.trim(),
-      notas_salida:   document.getElementById('fSalida').value.trim(),
-      notas_corazon:  document.getElementById('fCorazon').value.trim(),
-      notas_fondo:    document.getElementById('fFondo').value.trim(),
-      stock:          document.getElementById('fStock').value === 'true',
-      activo:         document.getElementById('fActivo').value === 'true',
+      ...(precioDescuentoVal ? { precio_descuento: precioDescuentoVal } : {}),
+      tipo:            document.getElementById('fTipo').value.trim(),
+      imagen:          imagenUrl,
+      descripcion:     document.getElementById('fDescripcion').value.trim(),
+      notas_salida:    document.getElementById('fSalida').value.trim(),
+      notas_corazon:   document.getElementById('fCorazon').value.trim(),
+      notas_fondo:     document.getElementById('fFondo').value.trim(),
+      stock:           document.getElementById('fStock').value === 'true',
+      activo:          document.getElementById('fActivo').value === 'true',
     };
 
     try {
@@ -752,6 +815,9 @@
       showToast('❌ Error al guardar');
       console.error(e);
     }
+
+    btnSave.textContent = 'Guardar';
+    btnSave.disabled = false;
   };
 
   // ===== TOAST =====
