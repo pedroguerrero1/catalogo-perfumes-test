@@ -47,6 +47,17 @@ async function cargarColeccion(nombre) {
   }
 }
 
+async function cargarColeccion(nombre) {
+  try {
+    const q = query(collection(db, nombre), orderBy("id"));
+    const snap = await getDocs(q);
+    return snap.docs.map(d => d.data()).filter(p => p.id && p.id !== 'temp');
+  } catch(e) {
+    console.warn(`No se pudo cargar ${nombre}:`, e);
+    return [];
+  }
+}
+
 const WHATSAPP_NUMBER = "5493535669706";
 
 const grid            = document.getElementById("grid");
@@ -63,8 +74,12 @@ let promos       = [];
 let desodorantes = [];
 let favoritos    = JSON.parse(localStorage.getItem('rulo_favs')) || [];
 
-function moneyARS(n){
-  return new Intl.NumberFormat("es-AR").format(n);
+function capitalize(str) {
+  if (!str) return "-";
+  return str.split(",").map(s => {
+    const t = s.trim();
+    return t.charAt(0).toUpperCase() + t.slice(1).toLowerCase();
+  }).join(", ");
 }
 
 function waLink(perfume){
@@ -240,9 +255,9 @@ async function openModal(p){
   }
   modalBadges.innerHTML = `<span class="badge">${p.marca || "-"}</span><span class="badge">${p.genero || "-"}</span><span class="badge">${p.ml || "-"}ml</span>`;
   modalDesc.textContent = p.descripcion || "Consultá disponibilidad por WhatsApp.";
-  document.getElementById("notas-salida").textContent = p.notas_salida || "-";
-  document.getElementById("notas-corazon").textContent = p.notas_corazon || "-";
-  document.getElementById("notas-fondo").textContent = p.notas_fondo || "-";
+  document.getElementById("notas-salida").textContent  = capitalize(p.notas_salida);
+  document.getElementById("notas-corazon").textContent = capitalize(p.notas_corazon);
+  document.getElementById("notas-fondo").textContent   = capitalize(p.notas_fondo);
   modalWa.href = waLink(p);
 }
 
